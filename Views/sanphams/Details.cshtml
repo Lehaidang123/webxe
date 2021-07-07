@@ -5,31 +5,287 @@
     Layout = "~/Views/Shared/_LayoutPage1.cshtml";
 }
 
-<h2>Details</h2>
 
-<div>
-    <h4>sanpham</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.tiltle)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.tiltle)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.imageurl)
-        </dt>
-
-        <dd>
-           <img src="@Url.Content(Model.imageurl)" style="width : 100px ;" />
-        </dd>
-
-    </dl>
+<<div class="wrapper row0">
+    <header id="header" class="hoc clear">
+        <!-- ################################################################################################ -->
+        <div id="logo" class="one_quarter first">
+            <h1><a href="/wavefire/index.html"><span>Y</span>15<span>Z</span>R</a></h1>
+        </div>
+        <div class="three_quarter">
+            <ul class="nospace clear">
+                <li class="one_third first">
+                    <div class="block clear"><a href="#"><i class="fa fa-phone"></i></a> <span><strong>Alo Admin:</strong> 0389672882</span></div>
+                </li>
+                <li class="one_third">
+                    <div class="block clear"><a href="#"><i class="fa fa-envelope"></i></a> <span><strong>mail:</strong> lehaidangxh@gmail.com</span></div>
+                </li>
+                <li class="one_third">
+                    <div class="block clear"><a href="#"><i class="fa fa-clock"></i></a> <span><strong> Hoạt Động:</strong> 08.00am - 18.00pm</span></div>
+                </li>
+            </ul>
+        </div>
+        <!-- ################################################################################################ -->
+    </header>
 </div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row1">
+    <section class="hoc clear">
+        <!-- ################################################################################################ -->
+        <nav id="mainav">
+            <ul class="clear">
+                <li class="active"><a href="~/Home/Trangchu">Home</a></li>
+                <li>
+                    <a  href="">Nhớt</a>
+
+                </li>
+                <li>
+                    <a  t href="#">Phuộc Xe</a>
+
+                </li>
+                <li><a href="#">Mâm Xe</a></li>
+                <li><a href="#">Ốc Titan</a></li>
+                <li><a href="#">Đồ Chơi Xe</a></li>
+                <li><a href="voxe.html">Vỏ Xe</a></li>
+            </ul>
+        </nav>
+        <!-- ################################################################################################ -->
+        <div id="searchform">
+            <div>
+                <form action="#" method="post">
+                    <fieldset>
+                        <legend>Tìm Kiếm:</legend>
+                        <input type="text" placeholder="Enter search term&hellip;">
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+        <!-- ################################################################################################ -->
+    </section>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper bgded overlay" style="background-image:url('../images/demo/backgrounds/bb.jpg');">
+    <div id="breadcrumb" class="hoc clear">
+        <!-- ################################################################################################ -->
+        <article>
+            <p>Shop Đồ Chơi Xe Máy</p>
+            <h3 class="heading">Hải Đăng Y15ZR</h3>
+            <p>Chuyên Cung Cấp Đồ Chơi Xe Máy Chính Hãng</p>
+            <footer><a class="btn" href="#">Trãi Nghiệm Ngay <i class="fa fa-angle-right"></i></a></footer>
+        </article>
+        <!-- ################################################################################################ -->
+    </div>
+</div>
+<!-- ################################################################################################ -->
+
+
+
+
+
+<main class="container">
+
+    <!-- Left Column / Headphones Image -->
+    <div class="left-column">
+        <img data-image="black" src="images/black.png" alt="">
+        <img data-image="blue" src="images/blue.png" alt="">
+        <img data-image="red" class="active" src="@Url.Content(Model.imageurl)" alt="">
+    </div>
+
+
+    <!-- Right Column -->
+    <div class="right-column">
+
+        <!-- Product Description -->
+        <div class="product-description">
+            <span> @Html.DisplayFor(model => model.tiltle)</span>
+            <h1>Beats EP</h1>
+            <p>The preferred choice of a vast range of acclaimed DJs. Punchy, bass-focused sound and high isolation. Sturdy headband and on-ear cushions suitable for live performance</p>
+        </div>
+
+        <!-- Product Configuration -->
+        <div class="product-configuration">
+
+            <!-- Product Color -->
+            <div class="product-color">
+                <span>Color</span>
+
+                <div class="color-choose">
+                    <div>
+                        <input data-image="red" type="radio" id="red" name="color" value="red" checked>
+                        <label for="red"><span></span></label>
+                    </div>
+                    <div>
+                        <input data-image="blue" type="radio" id="blue" name="color" value="blue">
+                        <label for="blue"><span></span></label>
+                    </div>
+                    <div>
+                        <input data-image="black" type="radio" id="black" name="color" value="black">
+                        <label for="black"><span></span></label>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Cable Configuration -->
+            <div class="cable-config">
+                <span>Cable configuration</span>
+
+                <div class="cable-choose">
+                    <button>Straight</button>
+                    <button>Coiled</button>
+                    <button>Long-coiled</button>
+                </div>
+
+                <a href="#">How to configurate your headphones</a>
+            </div>
+        </div>
+
+        <!-- Product Pricing -->
+        <div class="product-price">
+            <span>148$</span>
+            <a href="#" class="cart-btn">Add to cart</a>
+        </div>
+        <div>
+            <a href="~/sanphams/Edit/@Html.DisplayFor(modelItem => modelItem.id)">Edit</a>
+            <a href="~/sanphams/Delete/@Html.DisplayFor(modelItem => modelItem.id)">Delete</a>
+        </div>
+    </div>
+</main>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
+
+<div class="footer-bar">
+    <span class="article-wrapper">
+        <span class="article-label">Xem Bài Viết: </span>
+        <span class="article-link"><a href="https://www.thuthuatweb.net/css/mau-trang-san-pham-khong-the-bo-qua-bang-css3-va-jquery.html">Mẫu trang sản phẩm không thể bỏ qua bằng CSS3 và jQuery</a></span>
+    </span>
+
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $('.color-choose input').on('click', function () {
+            var headphonesColor = $(this).attr('data-image');
+
+            $('.active').removeClass('active');
+            $('.left-column img[data-image = ' + headphonesColor + ']').addClass('active');
+            $(this).addClass('active');
+        });
+
+    });
+</script>
+
+
+
+
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row3">
+    <main class="hoc container clear">
+        <!-- main body -->
+        <!-- ################################################################################################ -->
+        <!-- ################################################################################################ -->
+        <!-- ################################################################################################ -->
+        <nav class="pagination">
+            <ul>
+                <li><a href="#">&laquo; Previous</a></li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><strong>&hellip;</strong></li>
+                <li><a href="#">6</a></li>
+                <li class="current"><strong>7</strong></li>
+                <li><a href="#">8</a></li>
+                <li><a href="#">9</a></li>
+                <li><strong>&hellip;</strong></li>
+                <li><a href="#">14</a></li>
+                <li><a href="#">15</a></li>
+                <li><a href="#">Next &raquo;</a></li>
+            </ul>
+        </nav>
+        <!-- ################################################################################################ -->
+</div>
+<!-- ################################################################################################ -->
+<!-- / main body -->
+<div class="clear"></div>
+  </main>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row4">
+    <footer id="footer" class="hoc clear">
+        <!-- ################################################################################################ -->
+        <div class="one_third first">
+            <h6 class="heading">Thông Tin Liên Hệ</h6>
+            <p>Số 5 cây cám khu phố 1 bình hưng hòa B  Bình Tân HCM.</p>
+            <p class="btmspace-30">KẾT NỐI VỚI CHÚNG TÔI<a href="#"><i class="fa fa-arrow-right"></i></a>]</p>
+            <ul class="faico clear">
+                <li><a class="faicon-dribble" href="#"><i class="fa fa-dribbble"></i></a></li>
+                <li><a class="faicon-facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a class="faicon-google-plus" href="#"><i class="fa fa-google-plus-g"></i></a></li>
+                <li><a class="faicon-linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+                <li><a class="faicon-twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a class="faicon-vk" href="#"><i class="fa fa-vk"></i></a></li>
+            </ul>
+        </div>
+
+
+
+        <div class="one_third">
+            <h6 class="heading">Đăng Nhập Để Mua Hàng</h6>
+            <form method="post" action="#">
+                <fieldset>
+                    <legend>Newsletter:</legend>
+                    <input class="btmspace-15" type="text" value="" placeholder="Name">
+                    <input class="btmspace-15" type="text" value="" placeholder="Email">
+
+                    <ul class="dangnhap">
+                        <li class="dangki">
+                            <button type="submit" value="submit">Submit</button>
+
+                        </li>
+                        <li> <button type="submit" value="submit">Submit</button></li>
+                    </ul>
+                </fieldset>
+            </form>
+        </div>
+        <!-- ################################################################################################ -->
+    </footer>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row5">
+    <div id="copyright" class="hoc clear">
+        <!-- ################################################################################################ -->
+        <!-- ################################################################################################ -->
+    </div>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
+<!-- JAVASCRIPTS -->
+<script src="../layout/scripts/jquery.min.js"></script>
+<script src="../layout/scripts/jquery.backtotop.js"></script>
+<script src="../layout/scripts/jquery.mobilemenu.js"></script>
+</body>
+</html>
+
+
+
+
+
+
