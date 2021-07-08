@@ -1,4 +1,4 @@
-﻿@model IEnumerable<DCXEMAY.Models.sanpham>
+﻿@model IEnumerable<DCXEMAY.Models.SanPham>
 
 @{
     ViewBag.Title = "Index";
@@ -13,10 +13,22 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.tiltle)
+            @Html.DisplayNameFor(model => model.DanhMuc.TenDanhmuc)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.imageurl)
+            @Html.DisplayNameFor(model => model.TenSP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SoLuong)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GiaSP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MoTa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.URLImage)
         </th>
         <th></th>
     </tr>
@@ -24,15 +36,27 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.tiltle)
+            @Html.DisplayFor(modelItem => item.DanhMuc.TenDanhmuc)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.imageurl)
+            @Html.DisplayFor(modelItem => item.TenSP)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+            @Html.DisplayFor(modelItem => item.SoLuong)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GiaSP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MoTa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.URLImage)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IDSanpham }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IDSanpham }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IDSanpham })
         </td>
     </tr>
 }

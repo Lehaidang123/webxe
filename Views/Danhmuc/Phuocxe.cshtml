@@ -1,11 +1,16 @@
-﻿@model DCXEMAY.Models.SanPham
-
+﻿
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Phuocxe";
     Layout = "~/Views/Shared/_LayoutPage1.cshtml";
 }
 
-<h2>Details</h2>
+<h2>Phuocxe</h2>
+
+
+@model IEnumerable<DCXEMAY.Models.SanPham>
+
+
+<h2>Sanpham</h2>
 
 <div class="wrapper row0">
     <header id="header" class="hoc clear">
@@ -84,105 +89,43 @@
     </div>
 </div>
 <!-- ################################################################################################ -->
+<div class="row">
+    @foreach (var item in Model)
+    {
+        if (item.IDDanhmuc.Equals("2"))
+        {
+            <div class="col-4">
+                <a href="~/sanphams/Details/@Html.DisplayFor(modelItem => item.IDSanpham)">
 
+                    <img src="@Url.Content(item.URLImage)" />
 
+                    <h4>
+                        @Html.DisplayFor(modelItem => item.TenSP)
+                    </h4>
 
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-o"></i>
 
-
-<main class="container">
-
-    <!-- Left Column / Headphones Image -->
-    <div class="left-column">
-        <img data-image="black" src="images/black.png" alt="">
-        <img data-image="blue" src="images/blue.png" alt="">
-        <img data-image="red" class="active" src="@Url.Content(Model.URLImage)" alt="">
-    </div>
-
-
-    <!-- Right Column -->
-    <div class="right-column">
-
-        <!-- Product Description -->
-        <div class="product-description">
-            <span> @Html.DisplayFor(model => model.DanhMuc.TenDanhmuc)</span>
-            <h1>@Html.DisplayFor(model => model.TenSP)</h1>
-            <p>@Html.DisplayFor(model => model.MoTa)</p>
-        </div>
-
-        <!-- Product Configuration -->
-        <div class="product-configuration">
-
-            <!-- Product Color -->
-            <div class="product-color">
-                <span>Color</span>
-
-                <div class="color-choose">
-                    <div>
-                        <input data-image="red" type="radio" id="red" name="color" value="red" checked>
-                        <label for="red"><span></span></label>
                     </div>
-                    <div>
-                        <input data-image="blue" type="radio" id="blue" name="color" value="blue">
-                        <label for="blue"><span></span></label>
-                    </div>
-                    <div>
-                        <input data-image="black" type="radio" id="black" name="color" value="black">
-                        <label for="black"><span></span></label>
-                    </div>
+                </a>
+                <div>
+                    <a href="~/sanphams/Edit/@Html.DisplayFor(modelItem => item.IDSanpham)">Edit</a>
+                    <a href="~/sanphams/Delete/@Html.DisplayFor(modelItem => item.IDSanpham)">Delete</a>
                 </div>
 
+
+
+
             </div>
-
-            <!-- Cable Configuration -->
-            <div class="cable-config">
-                <span>Cable configuration</span>
-
-                <div class="cable-choose">
-                    <button>Straight</button>
-                    <button>Coiled</button>
-                    <button>Long-coiled</button>
-                </div>
-
-                <a href="#">How to configurate your headphones</a>
-            </div>
-        </div>
-
-        <!-- Product Pricing -->
-        <div class="product-price">
-            <span>@Html.DisplayFor(model => model.GiaSP)</span>
-            <a href="#" class="cart-btn">Add to cart</a>
-        </div>
-       
-    </div>
-</main>
-<p>
-   
-</p>
-
-<div class="footer-bar">
-    <span class="article-wrapper">
-        <span class="article-label">Xem Bài Viết: </span>
-        <span class="article-link"><a href="https://www.thuthuatweb.net/css/mau-trang-san-pham-khong-the-bo-qua-bang-css3-va-jquery.html">Mẫu trang sản phẩm không thể bỏ qua bằng CSS3 và jQuery</a></span>
-    </span>
+        }
+    }
 
 </div>
 
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>
-
-<script type="text/javascript">
-    $(document).ready(function () {
-
-        $('.color-choose input').on('click', function () {
-            var headphonesColor = $(this).attr('data-image');
-
-            $('.active').removeClass('active');
-            $('.left-column img[data-image = ' + headphonesColor + ']').addClass('active');
-            $(this).addClass('active');
-        });
-
-    });
-</script>
 
 
 
@@ -229,12 +172,12 @@
             <p>Số 5 cây cám khu phố 1 bình hưng hòa B  Bình Tân HCM.</p>
             <p class="btmspace-30">KẾT NỐI VỚI CHÚNG TÔI<a href="#"><i class="fa fa-arrow-right"></i></a>]</p>
             <ul class="faico clear">
-                <li><a class="faicon-dribble" href="#"><i class="fab fa-dribbble"></i></a></li>
-                <li><a class="faicon-facebook" href="#"><i class="fab fa-facebook"></i></a></li>
-                <li><a class="faicon-google-plus" href="#"><i class="fab fa-google-plus-g"></i></a></li>
-                <li><a class="faicon-linkedin" href="#"><i class="fab fa-linkedin"></i></a></li>
-                <li><a class="faicon-twitter" href="#"><i class="fab fa-twitter"></i></a></li>
-                <li><a class="faicon-vk" href="#"><i class="fab fa-vk"></i></a></li>
+                <li><a class="faicon-dribble" href="#"><i class="fa fa-dribbble"></i></a></li>
+                <li><a class="faicon-facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a class="faicon-google-plus" href="#"><i class="fa fa-google-plus-g"></i></a></li>
+                <li><a class="faicon-linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+                <li><a class="faicon-twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a class="faicon-vk" href="#"><i class="fa fa-vk"></i></a></li>
             </ul>
         </div>
 

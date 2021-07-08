@@ -6,15 +6,27 @@ namespace DCXEMAY.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("sanpham")]
-    public partial class sanpham
+    [Table("SanPham")]
+    public partial class SanPham
     {
-        [StringLength(50)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public string id { get; set; }
+        [Key]
+        [StringLength(255)]
+        public string IDSanpham { get; set; }
 
-        public string tiltle { get; set; }
+        public string TenSP { get; set; }
 
-        public string imageurl { get; set; }
+        public int? SoLuong { get; set; }
+        [DisplayFormat(DataFormatString = "{0:C0}", ApplyFormatInEditMode = true)]
+        public int? GiaSP { get; set; }
+
+        public string MoTa { get; set; }
+
+        public string URLImage { get; set; }
+
+        [StringLength(255)]
+        public string IDDanhmuc { get; set; }
+
+        public virtual DanhMuc DanhMuc { get; set; }
+        public IEnumerable<DanhMuc> DanhMucs { get; set; }
     }
 }

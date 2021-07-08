@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/layout/scripts/jquery.min.js")
+    @Styles.Render("~/Content/font-awesome/css/all.css")
+    @Styles.Render("~/Content/css/bootstrap.min.css")
+    @Styles.Render("~/Content/css/style.css")
+
+    @Styles.Render("~/Content/layout/scripts/jquery.backtotop.js")
+    @Styles.Render("~/Content/layout/scripts/ jquery.mobilemenu.js")
+</head>
+<body>
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>

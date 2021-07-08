@@ -1,5 +1,6 @@
 ﻿
-@model IEnumerable<DCXEMAY.Models.sanpham>
+
+@model IEnumerable<DCXEMAY.Models.SanPham>
 @{
     ViewBag.Title = "Trangchu";
     Layout = "~/Views/Shared/_LayoutPage1.cshtml";
@@ -32,39 +33,49 @@
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <div class="wrapper row1">
-    <section class="hoc clear">
-        <!-- ################################################################################################ -->
-        <nav id="mainav">
-            <ul class="clear">
-                <li class="active"><a href="Trangchu">Home</a></li>
-                <li>
-                    <a  href="#">Nhớt</a>
-                  
-                </li>
-                <li>
-                    <a  href="#">Phuộc Xe</a>
-                  
-                </li>
-                <li><a href="pages/mam.html">Mâm Xe</a></li>
-                <li><a href="pages/octitan.html">Ốc Titan</a></li>
-                <li><a href="pages/dochoi.html">Đồ Chơi Xe</a></li>
-                <li><a href="pages/voxe.html">Vỏ Xe</a></li>
-            </ul>
-        </nav>
-        <!-- ################################################################################################ -->
-        <div id="searchform">
-            <div>
-                <form action="#" method="post">
-                    <fieldset>
-                        <legend>Tìm Kiếm:</legend>
-                        <input type="text" placeholder="Enter search term&hellip;">
-                        <button type="submit"><i class="fa fa-search"></i></button>
-                    </fieldset>
-                </form>
+  
+
+
+        <section class="hoc clear">
+            <!-- ################################################################################################ -->
+            <nav id="mainav">
+                <ul class="clear">
+
+
+                    <li class="active"><a href="Trangchu">Home</a></li>
+
+                    <li>
+                        <a href="~/Danhmuc/Nhot">Nhớt</a>
+
+                    </li>
+                    </li>
+                    <li>
+                        <a t href="~/Danhmuc/Phuocxe">Phuộc Xe</a>
+
+                    </li>
+                    <li><a href="~/Danhmuc/mamxe">Mâm Xe</a></li>
+                    <li><a href="~/Danhmuc/octitan">Ốc Titan</a></li>
+                    <li><a href="#">Đồ Chơi Xe</a></li>
+                    <li><a href="~/Danhmuc/voxe">Vỏ Xe</a></li>
+
+
+                </ul>
+            </nav>
+            <!-- ################################################################################################ -->
+            <div id="searchform">
+                <div>
+                    <form action="#" method="post">
+                        <fieldset>
+                            <legend>Tìm Kiếm:</legend>
+                            <input type="text" placeholder="Enter search term&hellip;">
+                            <button type="submit"><i class="fa fa-search"></i></button>
+                        </fieldset>
+                    </form>
+                </div>
             </div>
-        </div>
-        <!-- ################################################################################################ -->
-    </section>
+            <!-- ################################################################################################ -->
+        </section>
+    
 </div>
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
@@ -104,13 +115,14 @@
     <div class="row">
         @foreach (var item in Model)
         {<div class="col-4">
-                <a href="~/sanphams/Details/@Html.DisplayFor(modelItem => item.id)">
+                <a href="~/sanphams/Details/@Html.DisplayFor(modelItem => item.IDSanpham)">
 
-                    <img src="@Url.Content(item.imageurl)" />
+                    <img src="@Url.Content(item.URLImage)" />
 
                     <h4>
-                        @Html.DisplayFor(modelItem => item.tiltle)
+                        @Html.DisplayFor(modelItem => item.TenSP)
                     </h4>
+                    <h1>   @Html.DisplayFor(modelItem => item.GiaSP)</h1>
 
                     <div class="rating">
                         <i class="fa fa-star"></i>
@@ -293,14 +305,14 @@
                 <div class="one_third first">
                     <h6 class="heading">Thông Tin Liên Hệ</h6>
                     <p>Số 5 cây cám khu phố 1 bình hưng hòa B  Bình Tân HCM.</p>
-                    <p class="btmspace-30">KẾT NỐI VỚI CHÚNG TÔI<a href="#"><i class="fa fa-arrow-right"></i></a>]</p>
+                    <p class="btmspace-30">KẾT NỐI VỚI CHÚNG TÔI<a href="#"><i class="fab fa-arrow-right"></i></a>]</p>
                     <ul class="faico clear">
-                        <li><a class="faicon-dribble" href="#"><i class="fa fa-dribbble"></i></a></li>
-                        <li><a class="faicon-facebook" href="https://www.facebook.com/profile.php?id=100006421546739"><i class="fa fa-facebook"></i></a></li>
-                        <li><a class="faicon-google-plus" href="#"><i class="fa fa-google-plus-g"></i></a></li>
-                        <li><a class="faicon-linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
-                        <li><a class="faicon-twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a class="faicon-vk" href="#"><i class="fa fa-vk"></i></a></li>
+                        <li><a class="faicon-dribble" href="#"><i class="fab fa-dribbble"></i></a></li>
+                        <li><a class="faicon-facebook" href="https://www.facebook.com/profile.php?id=100006421546739"><i class="fab fa-facebook"></i></a></li>
+                        <li><a class="faicon-google-plus" href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                        <li><a class="faicon-linkedin" href="#"><i class="fab fa-linkedin"></i></a></li>
+                        <li><a class="faicon-twitter" href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a class="faicon-vk" href="#"><i class="fab fa-vk"></i></a></li>
                     </ul>
                 </div>
                 <div class="one_third">

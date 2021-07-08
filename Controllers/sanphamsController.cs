@@ -12,48 +12,55 @@ using Microsoft.AspNet.Identity;
 
 namespace DCXEMAY.Controllers
 {
-    public class sanphamsController : Controller
+    public class SanPhamsController : Controller
     {
-        private Model1 db = new Model1();
+        private Model2 db = new Model2();
 
-        // GET: sanphams
+        // GET: SanPhams
         public ActionResult Index()
         {
-            return View(db.sanphams.ToList());
+            var sanPhams = db.SanPhams.Include(s => s.DanhMuc);
+            return View(sanPhams.ToList());
         }
+      
 
-        // GET: sanphams/Details/5
+        // GET: SanPhams/Details/5
         public ActionResult Details(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            sanpham sanpham = db.sanphams.Find(id);
-            if (sanpham == null)
+            SanPham sanPham = db.SanPhams.Find(id);
+            if (sanPham == null)
             {
                 return HttpNotFound();
             }
+            return View(sanPham);
+        }
+
+        // GET: SanPhams/Create
+        public ActionResult Create()
+        {
+            var sanpham = new SanPham()
+            {
+                DanhMucs = db.DanhMucs.ToList()
+            };
+         //   ViewBag.IDDanhmuc = new SelectList(db.DanhMucs, "IDDanhmuc", "TenDanhmuc");
             return View(sanpham);
         }
 
-        // GET: sanphams/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: sanphams/Create
+        // POST: SanPhams/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize]
-        public ActionResult Create([Bind(Include = "id,tiltle,imageurl")] sanpham sanpham,HttpPostedFileBase file)
+       
+        public ActionResult Create([Bind(Include = "IDSanpham,TenSP,SoLuong,GiaSP,MoTa,URLImage,IDDanhmuc")] SanPham sanPham,HttpPostedFileBase file)
         {
             try
             {
-
+              
 
 
                 if (file != null)
@@ -61,14 +68,14 @@ namespace DCXEMAY.Controllers
                     string filename = Path.GetFileName(file.FileName);
                     string extension = Path.GetExtension(file.FileName);
                     filename = filename + extension;
-                    sanpham.imageurl = "~/Content/Images/" + filename;
+                    sanPham.URLImage = "~/Content/Images/" + filename;
                     file.SaveAs(Path.Combine(HttpContext.Server.MapPath("~/Content/Images/"), filename));
-                      sanpham.id = User.Identity.GetUserId();
+                  
 
                 }
-              
-               
-                db.sanphams.Add(sanpham);
+               // sanPham.IDSanpham = User.Identity.GetUserId();
+                sanPham.DanhMucs = db.DanhMucs.ToList();
+                db.SanPhams.Add(sanPham);
                 db.SaveChanges();
                 return RedirectToAction("Index");
 
@@ -77,63 +84,70 @@ namespace DCXEMAY.Controllers
             }
             catch
             {
-                return View(sanpham);
+               
+                return View(sanPham);
             }
+        //    ViewBag.IDDanhmuc = new SelectList(db.DanhMucs, "IDDanhmuc", "TenDanhmuc", sanPham.IDDanhmuc);
         }
 
-        // GET: sanphams/Edit/5
+       
+        
+
+        // GET: SanPhams/Edit/5
         public ActionResult Edit(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            sanpham sanpham = db.sanphams.Find(id);
-            if (sanpham == null)
+            SanPham sanPham = db.SanPhams.Find(id);
+            if (sanPham == null)
             {
                 return HttpNotFound();
             }
-            return View(sanpham);
+            ViewBag.IDDanhmuc = new SelectList(db.DanhMucs, "IDDanhmuc", "TenDanhmuc", sanPham.IDDanhmuc);
+            return View(sanPham);
         }
 
-        // POST: sanphams/Edit/5
+        // POST: SanPhams/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,tiltle,imageurl")] sanpham sanpham)
+        public ActionResult Edit([Bind(Include = "IDSanpham,TenSP,SoLuong,GiaSP,MoTa,URLImage,IDDanhmuc")] SanPham sanPham)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(sanpham).State = EntityState.Modified;
+                db.Entry(sanPham).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(sanpham);
+            ViewBag.IDDanhmuc = new SelectList(db.DanhMucs, "IDDanhmuc", "TenDanhmuc", sanPham.IDDanhmuc);
+            return View(sanPham);
         }
 
-        // GET: sanphams/Delete/5
+        // GET: SanPhams/Delete/5
         public ActionResult Delete(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            sanpham sanpham = db.sanphams.Find(id);
-            if (sanpham == null)
+            SanPham sanPham = db.SanPhams.Find(id);
+            if (sanPham == null)
             {
                 return HttpNotFound();
             }
-            return View(sanpham);
+            return View(sanPham);
         }
 
-        // POST: sanphams/Delete/5
+        // POST: SanPhams/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)
         {
-            sanpham sanpham = db.sanphams.Find(id);
-            db.sanphams.Remove(sanpham);
+            SanPham sanPham = db.SanPhams.Find(id);
+            db.SanPhams.Remove(sanPham);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

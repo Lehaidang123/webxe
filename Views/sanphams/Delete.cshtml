@@ -1,4 +1,4 @@
-﻿@model DCXEMAY.Models.sanpham
+﻿@model DCXEMAY.Models.SanPham
 
 @{
     ViewBag.Title = "Delete";
@@ -9,23 +9,56 @@
 
 <h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>sanpham</h4>
+    <h4>SanPham</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.tiltle)
+            @Html.DisplayNameFor(model => model.DanhMuc.TenDanhmuc)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.tiltle)
+            @Html.DisplayFor(model => model.DanhMuc.TenDanhmuc)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.imageurl)
+            @Html.DisplayNameFor(model => model.TenSP)
         </dt>
 
         <dd>
-          <img src="@Url.Content(Model.imageurl)" />
+            @Html.DisplayFor(model => model.TenSP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SoLuong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoLuong)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GiaSP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GiaSP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MoTa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MoTa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.URLImage)
+        </dt>
+
+        <dd>
+            <img src="@Url.Content(Model.URLImage)" style="width: 250px ;" />
+          
         </dd>
 
     </dl>
