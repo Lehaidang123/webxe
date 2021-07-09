@@ -10,6 +10,12 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+@using (Html.BeginForm())
+{
+    <p>
+        Title: @Html.TextBox("SearchString") <input type="submit" value="Tìm kiếm" />
+    </p>
+}
 <table class="table">
     <tr>
         <th>
@@ -33,32 +39,33 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.DanhMuc.TenDanhmuc)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TenSP)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SoLuong)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.GiaSP)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MoTa)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.URLImage)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.IDSanpham }) |
-            @Html.ActionLink("Details", "Details", new { id=item.IDSanpham }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.IDSanpham })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DanhMuc.TenDanhmuc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenSP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoLuong)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GiaSP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MoTa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.URLImage)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.IDSanpham }) |
+                @Html.ActionLink("Details", "Details", new { id = item.IDSanpham }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.IDSanpham })
+            </td>
+        </tr>
+    }
 
 </table>

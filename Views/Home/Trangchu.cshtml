@@ -66,10 +66,14 @@
                 <div>
                     <form action="#" method="post">
                         <fieldset>
-                            <legend>Tìm Kiếm:</legend>
-                            <input type="text" placeholder="Enter search term&hellip;">
-                            <button type="submit"><i class="fa fa-search"></i></button>
-                        </fieldset>
+                            @using (Html.BeginForm())
+                            {
+                                <p>
+                                     @Html.TextBox("SearchString") <input type="submit" value="Tìm kiếm" />
+                                </p>
+                            }
+                               
+                            </fieldset>
                     </form>
                 </div>
             </div>

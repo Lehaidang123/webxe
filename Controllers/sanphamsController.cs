@@ -17,10 +17,18 @@ namespace DCXEMAY.Controllers
         private Model2 db = new Model2();
 
         // GET: SanPhams
-        public ActionResult Index()
+        public ActionResult Index(string searchString)
         {
+            var sp = from l in db.SanPhams // lấy toàn bộ liên kết
+                        select l;
+
+            if (!String.IsNullOrEmpty(searchString)) // kiểm tra chuỗi tìm kiếm có rỗng/null hay không
+            {
+              //  sp = SanPham.Where(s => s.Contains(searchString)); //lọc theo chuỗi tìm
+                sp = db.SanPhams.Where(s => s.TenSP.Contains(searchString));
+            }
             var sanPhams = db.SanPhams.Include(s => s.DanhMuc);
-            return View(sanPhams.ToList());
+            return View(sp);
         }
       
 
@@ -114,11 +122,19 @@ namespace DCXEMAY.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "IDSanpham,TenSP,SoLuong,GiaSP,MoTa,URLImage,IDDanhmuc")] SanPham sanPham)
+        public ActionResult Edit([Bind(Include = "IDSanpham,TenSP,SoLuong,GiaSP,MoTa,URLImage,IDDanhmuc")] SanPham sanPham,HttpPostedFileBase file)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(sanPham).State = EntityState.Modified;
+                if (file != null)
+                {
+                    string filename = Path.GetFileName(file.FileName);
+                    string extension = Path.GetExtension(file.FileName);
+                    filename = filename + extension;
+                    sanPham.URLImage = "~/Content/Images/" + filename;
+                    file.SaveAs(Path.Combine(HttpContext.Server.MapPath("~/Content/Images/"), filename));
+                }
+                    db.Entry(sanPham).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

@@ -32,12 +32,19 @@ namespace DCXEMAY.Controllers
 
             return View();
         }
-        public ActionResult Trangchu()
+        public ActionResult Trangchu(string searchString)
         {
-            var sampham = new SanPham();
-           
-            return View(db.SanPhams.ToList());
-          //  ViewBag.IDDanhmuc = new SelectList(db.DanhMucs, "IDDanhmuc", "TenDanhmuc", sanPham.IDDanhmuc);
+            var sp = from l in db.SanPhams // lấy toàn bộ liên kết
+                     select l;
+
+            if (!String.IsNullOrEmpty(searchString)) // kiểm tra chuỗi tìm kiếm có rỗng/null hay không
+            {
+                //  sp = SanPham.Where(s => s.Contains(searchString)); //lọc theo chuỗi tìm
+                sp = db.SanPhams.Where(s => s.TenSP.Contains(searchString));
+            }
+            var sanPhams = db.SanPhams.Include(s => s.DanhMuc);
+            return View(sp);
+            //  ViewBag.IDDanhmuc = new SelectList(db.DanhMucs, "IDDanhmuc", "TenDanhmuc", sanPham.IDDanhmuc);
         }
 
 

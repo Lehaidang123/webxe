@@ -5,6 +5,7 @@ namespace DCXEMAY.Models
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using System.Linq;
 
     [Table("SanPham")]
     public partial class SanPham
@@ -25,6 +26,11 @@ namespace DCXEMAY.Models
 
         [StringLength(255)]
         public string IDDanhmuc { get; set; }
+
+        internal static IQueryable<SanPham> Where(Func<object, bool> p)
+        {
+            throw new NotImplementedException();
+        }
 
         public virtual DanhMuc DanhMuc { get; set; }
         public IEnumerable<DanhMuc> DanhMucs { get; set; }
