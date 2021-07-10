@@ -36,49 +36,67 @@
   
 
 
-        <section class="hoc clear">
-            <!-- ################################################################################################ -->
-            <nav id="mainav">
-                <ul class="clear">
+    <section class="hoc clear">
+        <!-- ################################################################################################ -->
+        <nav id="mainav">
+            <ul class="clear">
 
 
-                    <li class="active"><a href="Trangchu">Home</a></li>
+                <li class="active"><a href="Trangchu">Home</a></li>
 
-                    <li>
-                        <a href="~/Danhmuc/Nhot">Nhớt</a>
+                <li>
+                    <a href="~/Danhmuc/Nhot">Nhớt</a>
 
-                    </li>
-                    </li>
-                    <li>
-                        <a t href="~/Danhmuc/Phuocxe">Phuộc Xe</a>
+                </li>
+                </li>
+                <li>
+                    <a t href="~/Danhmuc/Phuocxe">Phuộc Xe</a>
 
-                    </li>
-                    <li><a href="~/Danhmuc/mamxe">Mâm Xe</a></li>
-                    <li><a href="~/Danhmuc/octitan">Ốc Titan</a></li>
-                    <li><a href="#">Đồ Chơi Xe</a></li>
-                    <li><a href="~/Danhmuc/voxe">Vỏ Xe</a></li>
+                </li>
+                <li><a href="~/Danhmuc/mamxe">Mâm Xe</a></li>
+                <li><a href="~/Danhmuc/octitan">Ốc Titan</a></li>
+                <li><a href="#">Đồ Chơi Xe</a></li>
+                <li><a href="~/Danhmuc/voxe">Vỏ Xe</a></li>
 
 
-                </ul>
-            </nav>
-            <!-- ################################################################################################ -->
-            <div id="searchform">
-                <div>
-                    <form action="#" method="post">
-                        <fieldset>
-                            @using (Html.BeginForm())
-                            {
-                                <p>
-                                     @Html.TextBox("SearchString") <input type="submit" value="Tìm kiếm" />
-                                </p>
-                            }
-                               
-                            </fieldset>
-                    </form>
-                </div>
+            </ul>
+        </nav>
+        <!-- ################################################################################################ -->
+        <div id="searchform">
+            <div>
+                <form action="#" method="post">
+                    <fieldset>
+                        @using (Html.BeginForm())
+                        {
+                            <p>
+                                @Html.TextBox("SearchString") <input type="submit" value="Tìm kiếm" />
+                            </p>
+                        }
+
+                    </fieldset>
+                </form>
             </div>
-            <!-- ################################################################################################ -->
-        </section>
+        </div>
+        <nav id="mainav">
+            <ul class="clear">
+
+
+                <li>
+                    <a>
+                       <i class="fas fa-shopping-cart"></i>
+                       
+                    </a>
+                </li>
+
+
+            </ul>
+        </nav>
+       
+
+           
+       
+        <!-- ################################################################################################ -->
+    </section>
     
 </div>
 <!-- ################################################################################################ -->

@@ -231,6 +231,9 @@
     <Content Include="Content\font-awesome\webfonts\fa-brands-400.svg" />
     <Content Include="Content\font-awesome\webfonts\fa-regular-400.svg" />
     <Content Include="Content\font-awesome\webfonts\fa-solid-900.svg" />
+    <Content Include="Content\giohang\reset.css" />
+    <Content Include="Content\giohang\style.css" />
+    <Content Include="Content\js\index.js" />
     <Content Include="Content\layout\scripts\jquery.backtotop.js" />
     <Content Include="Content\layout\scripts\jquery.min.js" />
     <Content Include="Content\layout\scripts\jquery.mobilemenu.js" />
@@ -263,6 +266,7 @@
     <Content Include="images\demo\backgrounds\oc.jpg" />
     <Content Include="images\demo\backgrounds\page.PNG" />
     <Content Include="images\demo\backgrounds\phuoc.jpg" />
+    <Content Include="images\demo\backgrounds\pngtree-shopping-cart-icon-design-image_1071385.jpg" />
     <Content Include="images\demo\backgrounds\x1r.jpg" />
     <Content Include="images\demo\backgrounds\x1rwin.jpg" />
     <Content Include="images\demo\gallery\01.png" />
