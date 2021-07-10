@@ -42,7 +42,7 @@ namespace DCXEMAY.Controllers
                 //  sp = SanPham.Where(s => s.Contains(searchString)); //lọc theo chuỗi tìm
                 sp = db.SanPhams.Where(s => s.TenSP.Contains(searchString));
             }
-            var sanPhams = db.SanPhams.Include(s => s.DanhMuc);
+          
             return View(sp);
             //  ViewBag.IDDanhmuc = new SelectList(db.DanhMucs, "IDDanhmuc", "TenDanhmuc", sanPham.IDDanhmuc);
         }
