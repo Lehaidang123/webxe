@@ -171,6 +171,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\adminController.cs" />
+    <Compile Include="Controllers\cartController.cs" />
     <Compile Include="Controllers\DanhmucController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -231,7 +232,6 @@
     <Content Include="Content\font-awesome\webfonts\fa-brands-400.svg" />
     <Content Include="Content\font-awesome\webfonts\fa-regular-400.svg" />
     <Content Include="Content\font-awesome\webfonts\fa-solid-900.svg" />
-    <Content Include="Content\giohang\reset.css" />
     <Content Include="Content\giohang\style.css" />
     <Content Include="Content\js\index.js" />
     <Content Include="Content\layout\scripts\jquery.backtotop.js" />
@@ -365,6 +365,8 @@
     <Content Include="Views\Danhmuc\mamxe.cshtml" />
     <Content Include="Views\Danhmuc\octitan.cshtml" />
     <Content Include="Views\Danhmuc\voxe.cshtml" />
+    <Content Include="Views\Shared\cartlayout.cshtml" />
+    <Content Include="Views\cart\Cart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

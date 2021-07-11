@@ -1,180 +1,72 @@
-@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
-@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
-*, *:before, *:after {
-  box-sizing: border-box;
+/*
+** Style Simple Ecommerce Theme for Bootstrap 4
+** Created by T-PHP https://t-php.fr/43-theme-ecommerce-bootstrap-4.html
+*/
+.bloc_left_price {
+    color: #c01508;
+    text-align: center;
+    font-weight: bold;
+    font-size: 150%;
 }
 
-body {
-  font: 14px/22px "Lato", Arial, sans-serif;
-  background: #0099cc;
+.category_block li:hover {
+    background-color: #007bff;
 }
 
-.lighter-text {
-  color: #ABB0BE;
+    .category_block li:hover a {
+        color: #ffffff;
+    }
+
+.category_block li a {
+    color: #343a40;
 }
 
-.main-color-text {
-  color: #6394F8;
+.add_to_cart_block .price {
+    color: #c01508;
+    text-align: center;
+    font-weight: bold;
+    font-size: 200%;
+    margin-bottom: 0;
 }
 
-nav {
-  padding: 20px 0 40px 0;
-  background: #F8F8F8;
-  font-size: 16px;
-}
-nav .navbar-left {
-  float: left;
-}
-nav .navbar-right {
-  float: right;
-}
-nav ul li {
-  display: inline;
-  padding-left: 20px;
-}
-nav ul li a {
-  color: #777777;
-  text-decoration: none;
-}
-nav ul li a:hover {
-  color: black;
+.add_to_cart_block .price_discounted {
+    color: #343a40;
+    text-align: center;
+    text-decoration: line-through;
+    font-size: 140%;
 }
 
-.container {
-  margin: auto;
-  width: 80%;
+.product_rassurance {
+    padding: 10px;
+    margin-top: 15px;
+    background: #ffffff;
+    border: 1px solid #6c757d;
+    color: #6c757d;
 }
 
-.badge {
-  background-color: #6394F8;
-  border-radius: 10px;
-  color: white;
-  display: inline-block;
-  font-size: 12px;
-  line-height: 1;
-  padding: 3px 7px;
-  text-align: center;
-  vertical-align: middle;
-  white-space: nowrap;
+    .product_rassurance .list-inline {
+        margin-bottom: 0;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+        .product_rassurance .list-inline li:hover {
+            color: #343a40;
+        }
+
+.reviews_product .fa-star {
+    color: gold;
 }
 
-.shopping-cart {
-  margin: 20px 0;
-  float: right;
-  background: white;
-  width: 320px;
-  position: relative;
-  border-radius: 3px;
-  padding: 20px;
-}
-.shopping-cart .shopping-cart-header {
-  border-bottom: 1px solid #E8E8E8;
-  padding-bottom: 15px;
-}
-.shopping-cart .shopping-cart-header .shopping-cart-total {
-  float: right;
-}
-.shopping-cart .shopping-cart-items {
-  padding-top: 20px;
-}
-.shopping-cart .shopping-cart-items li {
-  margin-bottom: 18px;
-}
-.shopping-cart .shopping-cart-items img {
-  float: left;
-  margin-right: 12px;
-}
-.shopping-cart .shopping-cart-items .item-name {
-  display: block;
-  padding-top: 10px;
-  font-size: 16px;
-}
-.shopping-cart .shopping-cart-items .item-price {
-  color: #6394F8;
-  margin-right: 8px;
-}
-.shopping-cart .shopping-cart-items .item-quantity {
-  color: #ABB0BE;
+.pagination {
+    margin-top: 20px;
 }
 
-.shopping-cart:after {
-  bottom: 100%;
-  left: 89%;
-  border: solid transparent;
-  content: " ";
-  height: 0;
-  width: 0;
-  position: absolute;
-  pointer-events: none;
-  border-bottom-color: white;
-  border-width: 8px;
-  margin-left: -8px;
+footer {
+    background: #343a40;
+    padding: 40px;
 }
 
-.cart-icon {
-  color: #515783;
-  font-size: 24px;
-  margin-right: 7px;
-  float: left;
-}
-
-.button {
-  background: #0099aa;
-  color: white;
-  text-align: center;
-  padding: 12px;
-  text-decoration: none;
-  display: block;
-  border-radius: 3px;
-  font-size: 16px;
-  margin: 25px 0 15px 0;
-}
-.button:hover {
-  background: #729ef9;
-}
-
-.clearfix:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/*Thats all. I hope you enjoyed it.
-Thanks :)*/
-/***************************************************************/
-/*************** Footer Bar Style ******************************/
-/***************************************************************/
-.footer-bar
-{
-    display: block;
-    width: 100%;
-    height: 45px;
-    line-height: 45px;
-    background: #111;
-    border-top: 1px solid #E62600;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-}
-.footer-bar .article-wrapper{
-    font-family: arial, sans-serif;
-    font-size: 14px;
-    color: #888;
-    float: left;
-    margin-left: 10%;
-}
-.footer-bar .article-link a, .footer-bar .article-link a:visited{
-    text-decoration: none;
-    color: #fff;
-}
-.site-link a, .site-link a:visited{
-    color: #888;
-    font-size: 14px;
-    font-family: arial, sans-serif;
-    float: right;
-    margin-right: 10%;
-    text-decoration: none;
-}
-.site-link a:hover{
-    color: #E62600;
-}
+    footer a {
+        color: #f8f9fa !important
+    }
