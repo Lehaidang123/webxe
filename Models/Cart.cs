@@ -34,7 +34,13 @@ namespace DCXEMAY.Models
             {
                 item._shopping_quantity += _soluong;
             }
+          
         }
+        public double tongtien()
+        {
+            var Total = items.Sum(s => s._shopping_sp.GiaSP * s._shopping_quantity);
+            return (double)Total;
+                 }
 
     }
 }

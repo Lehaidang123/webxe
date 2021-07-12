@@ -12,6 +12,7 @@ namespace DCXEMAY.Controllers
     {
 
          Model2 db = new Model2();
+
         public Cart GetCart()
         {
             Cart cart = Session["Cart"] as Cart;
@@ -57,5 +58,8 @@ namespace DCXEMAY.Controllers
         {
             return View();
         }
+        
+
+        
     }
 }
