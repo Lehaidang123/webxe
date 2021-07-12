@@ -1,0 +1,38 @@
+﻿@model  DCXEMAY.Models.Cart
+
+@{
+    ViewBag.Title = "ShowCart";
+    Layout = "~/Views/Shared/cartlayout.cshtml";
+}
+
+<h2>ShowCart</h2>
+
+
+@using (Html.BeginForm("ShowCart", "cart"))
+{
+   if(Model != null)
+   {
+
+<table class="table">
+    Tên
+
+
+    @foreach (var item in Model.Items)
+    {
+        <td>
+            @Html.DisplayFor(modelItem => item._shopping_sp.TenSP)
+        </td>
+        <td>
+            <img src="@Url.Content(item._shopping_sp.URLImage)" />
+        </td>
+    }
+</table>
+       }
+
+
+
+
+
+
+
+   }

@@ -185,6 +185,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\DanhMuc.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -366,7 +367,8 @@
     <Content Include="Views\Danhmuc\octitan.cshtml" />
     <Content Include="Views\Danhmuc\voxe.cshtml" />
     <Content Include="Views\Shared\cartlayout.cshtml" />
-    <Content Include="Views\cart\Cart.cshtml" />
+    <Content Include="Views\cart\ShowCart.cshtml" />
+    <Content Include="Views\cart\giohang.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

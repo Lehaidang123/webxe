@@ -1,10 +1,27 @@
-﻿
+﻿@model DCXEMAY.Models.Cart
 @{
-    ViewBag.Title = "Cart";
+    ViewBag.Title = "giohang";
     Layout = "~/Views/Shared/cartlayout.cshtml";
 }
 
-<h1>Shopping Cart</h1>
+<h2>giohang</h2>
+@if (Model != null)
+{
+    <tbody>
+
+
+        @foreach (var item in Model.Items)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => item._shopping_sp.TenSP)
+                </td>
+            </tr>
+        }
+    </tbody>
+}
+
+h1>Shopping Cart</h1>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -19,7 +36,7 @@
         </button>
 
         <div class="collapse navbar-collapse justify-content-end" id="navbarsExampleDefault">
-            
+
 
             <form class="form-inline my-2 my-lg-0">
                 <div class="input-group input-group-sm">
@@ -173,7 +190,7 @@
                 <p class="float-left">
                     <a href="#">Back to top</a>
                 </p>
-             
+
             </div>
         </div>
     </div>

@@ -12,64 +12,88 @@ namespace DCXEMAY.Controllers
     {
         private Model2 db = new Model2();
         // GET: Danhmuc
-        public ActionResult Nhot()
+        public ActionResult Nhot(string searchString)
         {
-            SanPham sp = new SanPham();
+            var sp = from l in db.SanPhams // lấy toàn bộ liên kết
+                     select l;
 
-            var sanPhams = db.SanPhams.Include(s => s.DanhMuc);
-            string t = sp.IDDanhmuc;
+            if (!String.IsNullOrEmpty(searchString)) // kiểm tra chuỗi tìm kiếm có rỗng/null hay không
+            {
+                //  sp = SanPham.Where(s => s.Contains(searchString)); //lọc theo chuỗi tìm
+                sp = db.SanPhams.Where(s => s.TenSP.Contains(searchString));
+            }
 
-            return View(db.SanPhams.ToList());
+            return View(sp);
         }
 
 
-        public ActionResult Phuocxe()
+        public ActionResult Phuocxe(string searchString)
         {
-            SanPham sp = new SanPham();
+            var sp = from l in db.SanPhams // lấy toàn bộ liên kết
+                     select l;
 
-            var sanPhams = db.SanPhams.Include(s => s.DanhMuc);
-            string t = sp.IDDanhmuc;
+            if (!String.IsNullOrEmpty(searchString)) // kiểm tra chuỗi tìm kiếm có rỗng/null hay không
+            {
+                //  sp = SanPham.Where(s => s.Contains(searchString)); //lọc theo chuỗi tìm
+                sp = db.SanPhams.Where(s => s.TenSP.Contains(searchString));
+            }
 
-            return View(db.SanPhams.ToList());
+            return View(sp);
         }
-        public ActionResult mamxe()
+        public ActionResult mamxe(string searchString)
         {
-            SanPham sp = new SanPham();
+            var sp = from l in db.SanPhams // lấy toàn bộ liên kết
+                     select l;
 
-            var sanPhams = db.SanPhams.Include(s => s.DanhMuc);
-            string t = sp.IDDanhmuc;
+            if (!String.IsNullOrEmpty(searchString)) // kiểm tra chuỗi tìm kiếm có rỗng/null hay không
+            {
+                //  sp = SanPham.Where(s => s.Contains(searchString)); //lọc theo chuỗi tìm
+                sp = db.SanPhams.Where(s => s.TenSP.Contains(searchString));
+            }
 
-            return View(db.SanPhams.ToList());
-        }
-
-        public ActionResult octitan()
-        {
-            SanPham sp = new SanPham();
-
-            var sanPhams = db.SanPhams.Include(s => s.DanhMuc);
-            string t = sp.IDDanhmuc;
-
-            return View(db.SanPhams.ToList());
+            return View(sp);
         }
 
-        public ActionResult dochoixe()
+        public ActionResult octitan(string searchString)
         {
-            SanPham sp = new SanPham();
+            var sp = from l in db.SanPhams // lấy toàn bộ liên kết
+                     select l;
 
-            var sanPhams = db.SanPhams.Include(s => s.DanhMuc);
-            string t = sp.IDDanhmuc;
+            if (!String.IsNullOrEmpty(searchString)) // kiểm tra chuỗi tìm kiếm có rỗng/null hay không
+            {
+                //  sp = SanPham.Where(s => s.Contains(searchString)); //lọc theo chuỗi tìm
+                sp = db.SanPhams.Where(s => s.TenSP.Contains(searchString));
+            }
 
-            return View(db.SanPhams.ToList());
+            return View(sp);
         }
 
-        public ActionResult voxe()
+        public ActionResult dochoixe(string searchString)
         {
-            SanPham sp = new SanPham();
+            var sp = from l in db.SanPhams // lấy toàn bộ liên kết
+                     select l;
 
-            var sanPhams = db.SanPhams.Include(s => s.DanhMuc);
-            string t = sp.IDDanhmuc;
+            if (!String.IsNullOrEmpty(searchString)) // kiểm tra chuỗi tìm kiếm có rỗng/null hay không
+            {
+                //  sp = SanPham.Where(s => s.Contains(searchString)); //lọc theo chuỗi tìm
+                sp = db.SanPhams.Where(s => s.TenSP.Contains(searchString));
+            }
 
-            return View(db.SanPhams.ToList());
+            return View(sp);
+        }
+
+        public ActionResult voxe(string searchString)
+        {
+            var sp = from l in db.SanPhams // lấy toàn bộ liên kết
+                     select l;
+
+            if (!String.IsNullOrEmpty(searchString)) // kiểm tra chuỗi tìm kiếm có rỗng/null hay không
+            {
+                //  sp = SanPham.Where(s => s.Contains(searchString)); //lọc theo chuỗi tìm
+                sp = db.SanPhams.Where(s => s.TenSP.Contains(searchString));
+            }
+
+            return View(sp);
         }
 
     }

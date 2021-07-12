@@ -147,18 +147,32 @@
             </div>
         </div>
 
-        <!-- Product Pricing -->
-        <div class="product-price">
-            <span>@Html.DisplayFor(model => model.GiaSP)</span>
-            <a href="#" class="cart-btn">Thêm giỏ hàng</a>
-        </div>
-       
+        @foreach (var item in Model.IDSanpham)
+        {
+            <!-- Product Pricing -->
+            <div class="product-price">
+                <span>@Html.DisplayFor(model => model.GiaSP)</span>
+                <a href="~/cart/ShowCart/@Model.IDSanpham" class="cart-btn">Thêm giỏ hàng</a>
+            </div>
+        }
+
     </div>
 </main>
 <p>
-   
-</p>
 
+</p>
+<!-- Code đăng bình luận-->
+<br />
+<hr />
+<div class="col-md-10">
+    <h4>Ý kiến sản phẩm</h4>
+    <form action="#" method="post">
+        <textarea placeholder="Viết bình luận..." class="form-control" rows="5" cols="100"></textarea><br />
+        <input type="submit" value="Gửi ý kiến" class="cart-btn" />
+    </form>
+</div>
+<hr />
+<!--code hiện thị bình luận-->
 <div class="footer-bar">
     <span class="article-wrapper">
         <span class="article-label">Xem Bài Viết: </span>

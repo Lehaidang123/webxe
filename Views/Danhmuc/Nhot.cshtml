@@ -62,13 +62,30 @@
             <div>
                 <form action="#" method="post">
                     <fieldset>
-                        <legend>Tìm Kiếm:</legend>
-                        <input type="text" placeholder="Enter search term&hellip;">
-                        <button type="submit"><i class="fa fa-search"></i></button>
+                        @using (Html.BeginForm())
+                        {
+                            <p>
+                                @Html.TextBox("SearchString") <input type="submit" value="Tìm kiếm" />
+                            </p>
+                        }
                     </fieldset>
                 </form>
             </div>
         </div>
+        <nav id="mainav">
+            <ul class="clear">
+
+
+                <li>
+                    <a href="~/cart/giohang">
+                        <i class="fas fa-shopping-cart"></i>
+
+                    </a>
+                </li>
+
+
+            </ul>
+        </nav>
         <!-- ################################################################################################ -->
     </section>
 </div>
@@ -112,11 +129,7 @@
 
                     </div>
                 </a>
-                <div>
-                    <a href="~/sanphams/Edit/@Html.DisplayFor(modelItem => item.IDSanpham)">Edit</a>
-                    <a href="~/sanphams/Delete/@Html.DisplayFor(modelItem => item.IDSanpham)">Delete</a>
-                </div>
-
+              
 
 
 
