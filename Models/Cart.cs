@@ -36,11 +36,32 @@ namespace DCXEMAY.Models
             }
           
         }
+        public void updateQuantity(string id , int soluong)
+        {
+            var item = items.Find(s => s._shopping_sp.IDSanpham == id);
+            if(item != null)
+            {
+                item._shopping_quantity = soluong;
+            }    
+        }
         public double tongtien()
         {
             var Total = items.Sum(s => s._shopping_sp.GiaSP * s._shopping_quantity);
             return (double)Total;
-                 }
+         }
+        public void Remove(string id)
+        {
+            items.RemoveAll(s => s._shopping_sp.IDSanpham == id);
+
+        }
+        public int Total_quantity_Cart()
+        {
+            return items.Sum(s => s._shopping_quantity);
+        }
+        public void ClearCart()
+        {
+            items.Clear();
+        }
 
     }
 }

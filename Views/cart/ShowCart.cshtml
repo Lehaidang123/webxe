@@ -47,8 +47,8 @@
                     </div>
                 </div>
                 <a class="btn btn-success btn-sm ml-3" href="cart.html">
-                    <i class="fa fa-shopping-cart"></i> Cart
-                    <span class="badge badge-light">3</span>
+                    <i class="fa fa-shopping-cart"></i> 
+                    <span class="badge badge-light">  @Html.Action("BagCart", "cart")</span>
                 </a>
             </form>
         </div>
@@ -85,9 +85,16 @@
                                 <td><img src="@Url.Content(item._shopping_sp.URLImage)" style="width: 100px; height:100px;" /> </td>
                                 <td>@Html.DisplayFor(Model => item._shopping_sp.TenSP)</td>
                                 <td> @Html.DisplayFor(model => item._shopping_sp.DanhMuc.TenDanhmuc)</td>
-                                <td><input class="form-control" type="number" value="1"></td>
+                                <td>
+                                    @using(Html.BeginForm("updateQuantity","cart"))
+                                    { 
+                                    <input class="form-control" type="number" value="@item._shopping_quantity" name="quantity">
+                                <input type="hidden" value="@item._shopping_sp.IDSanpham" name="IDSanpham" />
+                                <input type="submit" value="Cập nhật" />
+                                }
+                                </td>
                                 <td class="text-right">@Html.DisplayFor(Model => item._shopping_sp.GiaSP)</td>
-                                <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
+                                <td class="text-right"><a href="~/cart/RemoveCart/@item._shopping_sp.IDSanpham"><i class="fa fa-trash"></i></a> </td>
                             </tr>
 
                             <tr>
