@@ -140,31 +140,39 @@
     <div class="row">
         @foreach (var item in Model)
         {<div class="col-4">
-                <a href="~/sanphams/Details/@Html.DisplayFor(modelItem => item.IDSanpham)">
+    <a href="~/sanphams/Details/@Html.DisplayFor(modelItem => item.IDSanpham)">
 
-                    <img src="@Url.Content(item.URLImage)" />
+        <img src="@Url.Content(item.URLImage)" />
 
-                    <h4>
-                        @Html.DisplayFor(modelItem => item.TenSP)
-                    </h4>
-                    <h1>   @Html.DisplayFor(modelItem => item.GiaSP)</h1>
+        <h4>
+            @Html.DisplayFor(modelItem => item.TenSP)
+        </h4>
+        <h1>   @Html.DisplayFor(modelItem => item.GiaSP)</h1>
 
-                    <div class="rating">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star-o"></i>
+        @*<div class="rating">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-o"></i>
 
-                    </div>
-                </a>
-
+        </div>*@
 
 
+    </a>
+    <a href="~/cart/AddtoCard/@item.IDSanpham"> <i class="fas fa-shopping-cart"></i></a>
+    <div class="socials-share">
+        <a class="bg-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://www.facebook.com/All-RacingShop-106377424321048/?ref=pages_you_manage" target="_blank"><span class="fab fa-facebook"></span> Share</a>
+        <a class="bg-email" href="https://mail.google.com/mail/u/0/?view=cm&fs=1&to&su=&body=https://www.facebook.com/All-RacingShop-106377424321048/?ref=pages_you_manage" target="_blank"><span class="fa fa-envelope"></span> Gmail</a>
+    </div>
 
-            </div>}
+
+
+
+</div>}
 
     </div>
+
     <div class="small-container">
         <h2 class="title"> Sản phẩm mới</h2>
         <div class="row">
@@ -329,6 +337,7 @@
                 <!-- ################################################################################################ -->
                 <div class="one_third first">
                     <h6 class="heading">Thông Tin Liên Hệ</h6>
+
                     <p>Số 5 cây cám khu phố 1 bình hưng hòa B  Bình Tân HCM.</p>
                     <p class="btmspace-30">KẾT NỐI VỚI CHÚNG TÔI<a href="#"><i class="fab fa-arrow-right"></i></a>]</p>
                     <ul class="faico clear">
@@ -352,21 +361,9 @@
                     </ul>
                 </div>
                 <div class="one_third">
-                    <h6 class="heading">Đăng Nhập Để Mua Hàng</h6>
+                    <h6 class="heading">Map chỉ đường</h6>
                     <form method="post" action="#">
-                        <fieldset>
-                            <legend>Newsletter:</legend>
-                            <input class="btmspace-15" type="text" value="" placeholder="Name">
-                            <input class="btmspace-15" type="text" value="" placeholder="Email">
-
-                            <ul class="dangnhap">
-                                <li class="dangki">
-                                    <button type="submit" value="submit">Submit</button>
-
-                                </li>
-                                <li> <button type="submit" value="submit">Submit</button></li>
-                            </ul>
-                        </fieldset>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4057.5913281048647!2d106.59036318011049!3d10.782576251267674!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752d3a4004bf0d%3A0xb92afde684c0436f!2zNSDEkMaw4budbmcgQ8OieSBDw6FtLCBCw6xuaCBIxrBuZyBIb8OgIEIsIELDrG5oIFTDom4sIFRow6BuaCBwaOG7kSBI4buTIENow60gTWluaCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1626252341678!5m2!1svi!2s" width="350" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                     </form>
                 </div>
                 <!-- ################################################################################################ -->

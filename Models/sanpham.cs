@@ -1,4 +1,4 @@
-namespace DCXEMAY.Models
+﻿namespace DCXEMAY.Models
 {
     using System;
     using System.Collections.Generic;
@@ -17,7 +17,7 @@ namespace DCXEMAY.Models
         public string TenSP { get; set; }
 
         public int? SoLuong { get; set; }
-        [DisplayFormat(DataFormatString = "{0:C0}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:0,0 vnđ}", ApplyFormatInEditMode = true)]
         public int? GiaSP { get; set; }
 
         public string MoTa { get; set; }

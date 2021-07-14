@@ -203,6 +203,7 @@
     <Content Include="Content\cc\fontawesome-all.min.css" />
     <Content Include="Content\cc\framework.css" />
     <Content Include="Content\cc\layout.css" />
+    <Content Include="Content\cc\share.css" />
     <Content Include="Content\cc\style.css" />
     <Content Include="Content\css\bootstrap-grid.css" />
     <Content Include="Content\css\bootstrap-grid.min.css" />
