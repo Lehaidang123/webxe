@@ -10,7 +10,7 @@ namespace DCXEMAY.Controllers
 {
     public class adminController : Controller
     {
-        private Model2 db = new Model2();
+        private Model1 db = new Model1();
         // GET: admin
         [Authorize(Users ="lehaidangxh@gmail.com")]
         public ActionResult admin()

@@ -132,20 +132,43 @@
                     </table>
                 </div>
             </div>
+
             <div class="col mb-2">
+
                 <div class="row">
                     <div class="col-sm-12  col-md-6">
+
                         <a href="~/Home/Trangchu"> <button class="btn btn-block btn-light">Continue Shopping</button></a>
 
                     </div>
                     <div class="col-sm-12 col-md-6 text-right">
+
                         <button class="btn btn-lg btn-block btn-success text-uppercase">Checkout</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    @using (Html.BeginForm("Checkout", "cart"))
+    {
+        <tfoot>
 
+            <tr>
+                <td>
+                    <input type="number" name="IDuser" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" name="diachi" />
+                </td>
+                <td>
+                    <input type="submit" class="btn-btn-s" />
+                </td>
+            </tr>
+
+        </tfoot>
+    }
     <!-- Footer -->
     <footer class="text-light">
         <div class="container">
@@ -199,7 +222,7 @@
             </div>
         </div>
     </footer>
-   
+
 </table>
        }
 

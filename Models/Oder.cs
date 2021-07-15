@@ -1,4 +1,4 @@
-﻿namespace DCXEMAY.Models
+namespace DCXEMAY.Models
 {
     using System;
     using System.Collections.Generic;
@@ -6,35 +6,31 @@
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("SanPham")]
-    public partial class SanPham
+    [Table("Oder")]
+    public partial class Oder
     {
-        internal List<DanhMuc> DanhMucs;
-
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public SanPham()
+        public Oder()
         {
             Oderdetails = new HashSet<Oderdetail>();
         }
 
         [Key]
-        [StringLength(255)]
-        public string IDSanpham { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int Idoder { get; set; }
 
-        public string TenSP { get; set; }
-
-        public int? SoLuong { get; set; }
-        [DisplayFormat(DataFormatString = "{0:0,0 vnđ}")]
-        public int? GiaSP { get; set; }
-
-        public string MoTa { get; set; }
-
-        public string URLImage { get; set; }
+        public DateTime? NGay { get; set; }
 
         [StringLength(255)]
-        public string IDDanhmuc { get; set; }
+        public string Diachi { get; set; }
 
-        public virtual DanhMuc DanhMuc { get; set; }
+        [StringLength(255)]
+        public string Tenkh { get; set; }
+
+        public int? sdt { get; set; }
+
+        [StringLength(1)]
+        public string mail { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Oderdetail> Oderdetails { get; set; }

@@ -11,7 +11,7 @@ namespace DCXEMAY.Controllers
     public class cartController : Controller
     {
 
-         Model2 db = new Model2();
+         Model1 db = new Model1();
 
         public Cart GetCart()
         {
@@ -83,6 +83,44 @@ namespace DCXEMAY.Controllers
                 ViewBag.QuantityCart = tatol_item;
                 return PartialView("BagCart");
                
+        }
+        public ActionResult Checkout(FormCollection form)
+        {
+            try
+            {
+                Cart cart = Session["Cart"] as Cart;
+
+
+
+                Oder oder = new Oder();
+                oder.NGay = DateTime.Now;
+                oder.Diachi = form["diachi"];
+                db.Oders.Add(oder);
+
+
+
+              foreach (var item in cart.Items)
+                {
+
+                    Oderdetail oderdetail = new Oderdetail();
+                    oderdetail.Idoder = oder.Idoder;
+                    oderdetail.IDSanpham = item._shopping_sp.IDSanpham;
+                    oderdetail.gia = Convert.ToString(item._shopping_sp.GiaSP);
+                    oderdetail.soluong = item._shopping_quantity;
+
+                    db.Oderdetails.Add(oderdetail);
+
+                }
+                db.SaveChanges();
+                cart.ClearCart();
+                return RedirectToAction("Index", "SanPham");
+
+            }
+            catch
+            {
+                return View();
+            }
+         
         }
 
         public ActionResult giohang()

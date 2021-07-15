@@ -5,14 +5,16 @@ using System.Linq;
 
 namespace DCXEMAY.Models
 {
-    public partial class Model2 : DbContext
+    public partial class Model1 : DbContext
     {
-        public Model2()
-            : base("name=Model2")
+        public Model1()
+            : base("name=Model1")
         {
         }
 
         public virtual DbSet<DanhMuc> DanhMucs { get; set; }
+        public virtual DbSet<Oder> Oders { get; set; }
+        public virtual DbSet<Oderdetail> Oderdetails { get; set; }
         public virtual DbSet<SanPham> SanPhams { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

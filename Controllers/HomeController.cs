@@ -13,7 +13,7 @@ namespace DCXEMAY.Controllers
 {
     public class HomeController : Controller
     {
-        private Model2 db = new Model2();
+        private Model1 db = new Model1();
         public ActionResult Index()
         {
             return View();

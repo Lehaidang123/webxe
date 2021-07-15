@@ -8,29 +8,27 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using DCXEMAY.Models;
-using Microsoft.AspNet.Identity;
 
 namespace DCXEMAY.Controllers
 {
     public class SanPhamsController : Controller
     {
-        private Model2 db = new Model2();
+        private Model1 db = new Model1();
 
         // GET: SanPhams
         public ActionResult Index(string searchString)
         {
             var sp = from l in db.SanPhams // lấy toàn bộ liên kết
-                        select l;
+                     select l;
 
             if (!String.IsNullOrEmpty(searchString)) // kiểm tra chuỗi tìm kiếm có rỗng/null hay không
             {
-              //  sp = SanPham.Where(s => s.Contains(searchString)); //lọc theo chuỗi tìm
+                //  sp = SanPham.Where(s => s.Contains(searchString)); //lọc theo chuỗi tìm
                 sp = db.SanPhams.Where(s => s.TenSP.Contains(searchString));
             }
             var sanPhams = db.SanPhams.Include(s => s.DanhMuc);
             return View(sp);
         }
-      
 
         // GET: SanPhams/Details/5
         public ActionResult Details(string id)
@@ -50,12 +48,8 @@ namespace DCXEMAY.Controllers
         // GET: SanPhams/Create
         public ActionResult Create()
         {
-            var sanpham = new SanPham()
-            {
-                DanhMucs = db.DanhMucs.ToList()
-            };
-         //   ViewBag.IDDanhmuc = new SelectList(db.DanhMucs, "IDDanhmuc", "TenDanhmuc");
-            return View(sanpham);
+            ViewBag.IDDanhmuc = new SelectList(db.DanhMucs, "IDDanhmuc", "TenDanhmuc");
+            return View();
         }
 
         // POST: SanPhams/Create
@@ -63,12 +57,12 @@ namespace DCXEMAY.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-       
-        public ActionResult Create([Bind(Include = "IDSanpham,TenSP,SoLuong,GiaSP,MoTa,URLImage,IDDanhmuc")] SanPham sanPham,HttpPostedFileBase file)
+
+        public ActionResult Create([Bind(Include = "IDSanpham,TenSP,SoLuong,GiaSP,MoTa,URLImage,IDDanhmuc")] SanPham sanPham, HttpPostedFileBase file)
         {
             try
             {
-              
+
 
 
                 if (file != null)
@@ -78,10 +72,10 @@ namespace DCXEMAY.Controllers
                     filename = filename + extension;
                     sanPham.URLImage = "~/Content/Images/" + filename;
                     file.SaveAs(Path.Combine(HttpContext.Server.MapPath("~/Content/Images/"), filename));
-                  
+
 
                 }
-               // sanPham.IDSanpham = User.Identity.GetUserId();
+                // sanPham.IDSanpham = User.Identity.GetUserId();
                 sanPham.DanhMucs = db.DanhMucs.ToList();
                 db.SanPhams.Add(sanPham);
                 db.SaveChanges();
@@ -92,14 +86,13 @@ namespace DCXEMAY.Controllers
             }
             catch
             {
-               
+
                 return View(sanPham);
             }
-        //    ViewBag.IDDanhmuc = new SelectList(db.DanhMucs, "IDDanhmuc", "TenDanhmuc", sanPham.IDDanhmuc);
+            //    ViewBag.IDDanhmuc = new SelectList(db.DanhMucs, "IDDanhmuc", "TenDanhmuc", sanPham.IDDanhmuc);
         }
 
-       
-        
+
 
         // GET: SanPhams/Edit/5
         public ActionResult Edit(string id)
@@ -122,7 +115,7 @@ namespace DCXEMAY.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "IDSanpham,TenSP,SoLuong,GiaSP,MoTa,URLImage,IDDanhmuc")] SanPham sanPham,HttpPostedFileBase file)
+        public ActionResult Edit([Bind(Include = "IDSanpham,TenSP,SoLuong,GiaSP,MoTa,URLImage,IDDanhmuc")] SanPham sanPham, HttpPostedFileBase file)
         {
             if (ModelState.IsValid)
             {
@@ -134,7 +127,7 @@ namespace DCXEMAY.Controllers
                     sanPham.URLImage = "~/Content/Images/" + filename;
                     file.SaveAs(Path.Combine(HttpContext.Server.MapPath("~/Content/Images/"), filename));
                 }
-                    db.Entry(sanPham).State = EntityState.Modified;
+                db.Entry(sanPham).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

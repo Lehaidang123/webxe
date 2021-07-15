@@ -189,8 +189,10 @@
     <Compile Include="Models\DanhMuc.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\Model2.cs" />
-    <Compile Include="Models\sanpham.cs" />
+    <Compile Include="Models\Model1.cs" />
+    <Compile Include="Models\Oder.cs" />
+    <Compile Include="Models\Oderdetail.cs" />
+    <Compile Include="Models\SanPham.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -355,11 +357,6 @@
     <Content Include="Views\Shared\_LayoutPage1.cshtml" />
     <Content Include="Views\Home\Trangchu.cshtml" />
     <Content Include="Views\admin\admin.cshtml" />
-    <Content Include="Views\SanPhams\Create.cshtml" />
-    <Content Include="Views\SanPhams\Delete.cshtml" />
-    <Content Include="Views\SanPhams\Details.cshtml" />
-    <Content Include="Views\SanPhams\Edit.cshtml" />
-    <Content Include="Views\SanPhams\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutPage2.cshtml" />
     <Content Include="Views\admin\Sanpham.cshtml" />
     <Content Include="Views\Danhmuc\Nhot.cshtml" />
@@ -371,6 +368,11 @@
     <Content Include="Views\cart\ShowCart.cshtml" />
     <Content Include="Views\cart\giohang.cshtml" />
     <Content Include="Views\cart\BagCart.cshtml" />
+    <Content Include="Views\SanPhams\Create.cshtml" />
+    <Content Include="Views\SanPhams\Delete.cshtml" />
+    <Content Include="Views\SanPhams\Details.cshtml" />
+    <Content Include="Views\SanPhams\Edit.cshtml" />
+    <Content Include="Views\SanPhams\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
