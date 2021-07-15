@@ -26,17 +26,58 @@
     <script src="~/Scripts/scripts/jquery.min.js"></script>
     <script src="~/Scripts/scripts/jquery.mobilemenu.js"></script>
     <script src="~/Scripts/scrips.js"></script>
+   
+
+
+
     @Styles.Render("~/Content/cc/framework.css")
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/Scripts/scrips.js")
 </head>
 <body id="top">
     <div>
+
         @RenderBody()
+
+
     </div>
+
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
     @RenderSection("upload", required: false)
+
+    <!-- Messenger Plugin chat Code -->
+    <!--<div id="fb-root"></div>-->
+
+    <!-- Your Plugin chat code -->
+    <!--<div id="fb-customer-chat" class="fb-customerchat">
+    </div>
+
+    <script>
+        var chatbox = document.getElementById('fb-customer-chat');
+        chatbox.setAttribute("page_id", "106377424321048");
+        chatbox.setAttribute("attribution", "biz_inbox");
+
+        window.fbAsyncInit = function () {
+            FB.init({
+                xfbml: true,
+                version: 'v11.0'
+            });
+        };
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>-->
+
+
 </body>
+
+
+
 </html>

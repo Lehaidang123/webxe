@@ -12,7 +12,7 @@ namespace DCXEMAY.Controllers
     {
         private Model2 db = new Model2();
         // GET: admin
-        [Authorize]
+        [Authorize(Users ="lehaidangxh@gmail.com")]
         public ActionResult admin()
         {
             return View();

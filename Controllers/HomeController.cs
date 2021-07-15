@@ -47,6 +47,6 @@ namespace DCXEMAY.Controllers
             //  ViewBag.IDDanhmuc = new SelectList(db.DanhMucs, "IDDanhmuc", "TenDanhmuc", sanPham.IDDanhmuc);
         }
 
-
+     
     }
 }

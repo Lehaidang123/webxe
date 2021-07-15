@@ -33,7 +33,7 @@
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <div class="wrapper row1">
-  
+
 
 
     <section class="hoc clear">
@@ -85,22 +85,22 @@
 
                 <li>
                     <a href="~/cart/ShowCart">
-                       <i class="fas fa-shopping-cart"></i>
-                        @Html.Action("BagCart","cart")
-                       
+                        <i class="fas fa-shopping-cart"></i>
+                        @Html.Action("BagCart", "cart")
+
                     </a>
                 </li>
 
 
             </ul>
         </nav>
-       
 
-           
-       
+
+
+
         <!-- ################################################################################################ -->
     </section>
-    
+
 </div>
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
@@ -140,36 +140,36 @@
     <div class="row">
         @foreach (var item in Model)
         {<div class="col-4">
-    <a href="~/sanphams/Details/@Html.DisplayFor(modelItem => item.IDSanpham)">
+                <a href="~/sanphams/Details/@Html.DisplayFor(modelItem => item.IDSanpham)">
 
-        <img src="@Url.Content(item.URLImage)" />
+                    <img src="@Url.Content(item.URLImage)" />
 
-        <h4>
-            @Html.DisplayFor(modelItem => item.TenSP)
-        </h4>
-        <h1>   @Html.DisplayFor(modelItem => item.GiaSP)</h1>
+                    <h4>
+                        @Html.DisplayFor(modelItem => item.TenSP)
+                    </h4>
+                    <h1>   @Html.DisplayFor(modelItem => item.GiaSP)</h1>
 
-        @*<div class="rating">
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star-o"></i>
+                    @*<div class="rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-o"></i>
 
-        </div>*@
-
-
-    </a>
-    <a href="~/cart/AddtoCard/@item.IDSanpham"> <i class="fas fa-shopping-cart"></i></a>
-    <div class="socials-share">
-        <a class="bg-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://www.facebook.com/All-RacingShop-106377424321048/?ref=pages_you_manage" target="_blank"><span class="fab fa-facebook"></span> Share</a>
-        <a class="bg-email" href="https://mail.google.com/mail/u/0/?view=cm&fs=1&to&su=&body=https://www.facebook.com/All-RacingShop-106377424321048/?ref=pages_you_manage" target="_blank"><span class="fa fa-envelope"></span> Gmail</a>
-    </div>
+                        </div>*@
 
 
+                </a>
+                <a href="~/cart/AddtoCard/@item.IDSanpham"> <i class="fas fa-shopping-cart"></i></a>
+                <div class="socials-share">
+                    <a class="bg-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://www.facebook.com/All-RacingShop-106377424321048/?ref=pages_you_manage" target="_blank"><span class="fab fa-facebook"></span> Share</a>
+                    <a class="bg-email" href="https://mail.google.com/mail/u/0/?view=cm&fs=1&to&su=&body=https://www.facebook.com/All-RacingShop-106377424321048/?ref=pages_you_manage" target="_blank"><span class="fa fa-envelope"></span> Gmail</a>
+                </div>
 
 
-</div>}
+
+
+            </div>}
 
     </div>
 
@@ -368,7 +368,9 @@
                 </div>
                 <!-- ################################################################################################ -->
             </footer>
+
         </div>
+
         <!-- ################################################################################################ -->
         <!-- ################################################################################################ -->
         <!-- ################################################################################################ -->
@@ -378,13 +380,122 @@
                 <!-- ################################################################################################ -->
             </div>
         </div>
+        <div class="zalo-chat-widget" data-oaid="579745863508352884" data-welcome-message="Rất vui khi được hỗ trợ bạn!" data-autopopup="0" data-width="350" data-height="420"></div>
+
+        <script src="https://sp.zalo.me/plugins/sdk.js"></script>
         <!-- ################################################################################################ -->
         <!-- ################################################################################################ -->
         <!-- ################################################################################################ -->
         <a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
         <!-- JAVASCRIPTS -->
+
         <script src="~/Content/layout/scripts/jquery.min.js"></script>
         <script src="~/Content/layout/scripts/jquery.backtotop.js"></script>
         <script src="~/Content/layout/scripts/jquery.mobilemenu.js"></script>
+        <!-- Messenger Plugin chat Code -->
+   
+
+    <!-- Your Plugin chat code -->
+   
+
+        <div class="call-mobile2">
+            <a data-animate="fadeInDown" href="https://zalo.me/0389672882" target="_blank" class="button success1" style="border-radius:99px;" data-animated="true">
+                <span>Chat Zalo </span>
+            </a>
+        </div>
+
+        <div class="call-mobile1">
+            <a data-animate="fadeInDown" href="https://www.facebook.com/stanleydang88" target="_blank" class="button success2" style="border-radius:99px;" data-animated="true">
+                <span>Chat Facebook</span>
+            </a>
+        </div>
+
+        <div class="call-mobile">
+            <a id="callnowbutton" href="tel:0389672882">Gọi 0389672882</a>
+        </div>
+
+        <style>
+            .success1.is-underline:hover, .success1.is-outline:hover, .success1 {
+                background-color: #1E73BE;
+                padding: 0 5px;
+                color: white !important;
+            }
+
+            .success2.is-underline:hover, .success2.is-outline:hover, .success2 {
+                background-color: #ff4800;
+                padding: 0 5px;
+                color: white !important;
+            }
+
+            .call-mobile {
+                background: #00a63f;
+                position: fixed;
+                bottom: 10px;
+                height: 40px;
+                line-height 40px;
+                padding: 7px 0px 0 0px;
+                border-radius: 40px;
+                color: #fff;
+                left: 20px;
+                z-index: 99999;
+            }
+
+            .call-mobile1 {
+                position: fixed;
+                bottom: 55px;
+                height: 40px;
+                line-height: 40px;
+                padding: 0 0px 0 0px;
+                border-radius: 40px;
+                color: #fff;
+                left: 20px;
+                z-index: 99999;
+            }
+
+            .call-mobile2 {
+                position: fixed;
+                bottom: 100px;
+                height: 40px;
+                line-height: 40px;
+                padding: 0 0px 0 0px;
+                border-radius: 40px;
+                color: #fff;
+                left: 20px;
+                z-index: 99999;
+            }
+
+            .call-mobile i {
+                font-size: 20px;
+                line-height: 40px;
+                background: #B52026;
+                border-radius: 100%;
+                width: 40px;
+                height: 40px;
+                text-align: center;
+                float: right;
+            }
+
+            .call-mobile a {
+                color: #fff;
+                font-size: 15px;
+                font-weight: bold;
+                text-decoration: none;
+                margin-right: 10px;
+                padding-left: 10px;
+            }
+
+            .button span {
+                text-transform: initial;
+                font-weight: 400;
+                font-family: poppins;
+            }
+
+            a#callnowbutton {
+                font-family: poppins;
+                font-weight: 400;
+            }
+        </style>
+
+
 
 
