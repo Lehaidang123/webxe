@@ -36,7 +36,7 @@ namespace DCXEMAY.Models
             }
           
         }
-        public void updateQuantity(string id , int soluong)
+        public void updateQuantity(int id , int soluong)
         {
             var item = items.Find(s => s._shopping_sp.IDSanpham == id);
             if(item != null)
@@ -49,7 +49,7 @@ namespace DCXEMAY.Models
             var Total = items.Sum(s => s._shopping_sp.GiaSP * s._shopping_quantity);
             return (double)Total;
          }
-        public void Remove(string id)
+        public void Remove(int id)
         {
             items.RemoveAll(s => s._shopping_sp.IDSanpham == id);
 

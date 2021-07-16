@@ -16,7 +16,6 @@ namespace DCXEMAY.Models
         }
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Idoder { get; set; }
 
         public DateTime? NGay { get; set; }

@@ -8,6 +8,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using DCXEMAY.Models;
+using Microsoft.AspNet.Identity;
 
 namespace DCXEMAY.Controllers
 {
@@ -31,7 +32,7 @@ namespace DCXEMAY.Controllers
         }
 
         // GET: SanPhams/Details/5
-        public ActionResult Details(string id)
+        public ActionResult Details(int id)
         {
             if (id == null)
             {
@@ -75,8 +76,8 @@ namespace DCXEMAY.Controllers
 
 
                 }
-                // sanPham.IDSanpham = User.Identity.GetUserId();
-                sanPham.DanhMucs = db.DanhMucs.ToList();
+             
+               sanPham.DanhMucs = db.DanhMucs.ToList();
                 db.SanPhams.Add(sanPham);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -95,7 +96,7 @@ namespace DCXEMAY.Controllers
 
 
         // GET: SanPhams/Edit/5
-        public ActionResult Edit(string id)
+        public ActionResult Edit(int id)
         {
             if (id == null)
             {
@@ -136,7 +137,7 @@ namespace DCXEMAY.Controllers
         }
 
         // GET: SanPhams/Delete/5
-        public ActionResult Delete(string id)
+        public ActionResult Delete(int id)
         {
             if (id == null)
             {

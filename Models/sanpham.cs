@@ -18,13 +18,12 @@
         }
 
         [Key]
-        [StringLength(255)]
-        public string IDSanpham { get; set; }
+        public int IDSanpham { get; set; }
 
         public string TenSP { get; set; }
 
         public int? SoLuong { get; set; }
-        [DisplayFormat(DataFormatString = "{0:0,0 vnđ}")]
+        [DisplayFormat(DataFormatString ="{0:0,0 vnđ}")]
         public int? GiaSP { get; set; }
 
         public string MoTa { get; set; }

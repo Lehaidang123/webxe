@@ -9,15 +9,13 @@ namespace DCXEMAY.Models
     [Table("Oderdetail")]
     public partial class Oderdetail
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ID { get; set; }
 
         public int? soluong { get; set; }
 
         public string gia { get; set; }
 
-        [StringLength(255)]
-        public string IDSanpham { get; set; }
+        public int? IDSanpham { get; set; }
 
         public int? Idoder { get; set; }
 
