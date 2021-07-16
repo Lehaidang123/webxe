@@ -147,14 +147,13 @@
             </div>
         </div>
 
-        @foreach (var item in Model.IDSanpham)
-        {
+       
             <!-- Product Pricing -->
             <div class="product-price">
                 <span>@Html.DisplayFor(model => model.GiaSP)</span>
                 <a href="~/cart/AddtoCard/@Model.IDSanpham" class="cart-btn">Thêm giỏ hàng</a>
             </div>
-        }
+        
 
     </div>
 </main>
