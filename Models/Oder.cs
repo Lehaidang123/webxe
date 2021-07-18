@@ -25,10 +25,10 @@ namespace DCXEMAY.Models
 
         [StringLength(255)]
         public string Tenkh { get; set; }
+        [StringLength(255)]
+        public string sdt { get; set; }
 
-        public int? sdt { get; set; }
-
-        [StringLength(1)]
+        [StringLength(255)]
         public string mail { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -100,6 +100,9 @@ namespace DCXEMAY.Controllers
           
                 oder.NGay = DateTime.Now;
                 oder.Diachi = form["diachi"];
+                oder.Tenkh = form["hoten"];
+                oder.sdt = form["sdt"];
+                oder.mail = form["mail"];
                 db.Oders.Add(oder);
 
 

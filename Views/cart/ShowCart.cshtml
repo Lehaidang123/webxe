@@ -151,23 +151,33 @@
     </div>
     @using (Html.BeginForm("Checkout", "cart"))
     {
-        <tfoot>
+<tfoot>
 
-            <tr>
-                <td>
-                    <input type="number" name="IDuser" />
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <input type="text" name="diachi" />
-                </td>
-                <td>
-                    <input type="submit" class="btn-btn-s" />
-                </td>
-            </tr>
+    <tr>
+        <td>
+            <input type="text" name="diachi" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="text" name="hoten" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="number" name="sdt" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="text" name="mail" />
+        </td>
+        <td>
+            <input type="submit" class="btn-btn-s" />
+        </td>
+    </tr>
 
-        </tfoot>
+</tfoot>
     }
     <!-- Footer -->
     <footer class="text-light">
