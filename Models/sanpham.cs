@@ -5,10 +5,14 @@
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using PagedList;
+    using System.Linq;
+    using PagedList.Mvc;
 
     [Table("SanPham")]
     public partial class SanPham
     {
+        Model1 db = new Model1();
         internal List<DanhMuc> DanhMucs;
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -16,7 +20,10 @@
         {
             Oderdetails = new HashSet<Oderdetail>();
         }
-
+        public IEnumerable<SanPham> ListAllpage(int page,int size)
+        {
+            return db.SanPhams.OrderByDescending(s=>s.GiaSP).ToPagedList(page, size);
+        }
         [Key]
         public int IDSanpham { get; set; }
 

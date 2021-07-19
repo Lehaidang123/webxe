@@ -1,6 +1,8 @@
-﻿
+﻿@model PagedList.PagedList<DCXEMAY.Models.SanPham>
 
-@model IEnumerable<DCXEMAY.Models.SanPham>
+@using PagedList.Mvc;
+
+@*@model IEnumerable<DCXEMAY.Models.SanPham>*@
 @{
     ViewBag.Title = "Trangchu";
     Layout = "~/Views/Shared/_LayoutPage1.cshtml";
@@ -173,63 +175,8 @@
 
     </div>
 
-    <div class="small-container">
-        <h2 class="title"> Sản phẩm mới</h2>
-        <div class="row">
-            <div class="col-4">
-                <img src="~/images/demo/backgrounds/mam.jpg" />
-                <h4>Mâm RacingBoy</h4>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-o"></i>
-
-                </div>
-
-            </div>
-            <div class="col-4">
-                <img src="~/images/demo/backgrounds/nhot.jpg" />
-                <h4>Nhớt motul</h4>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-0"></i>
-
-                </div>
-
-            </div>
-            <div class="col-4">
-                <img src="~/images/demo/backgrounds/oc.jpg" />
-                <h4>Ốc titan</h4>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-0"></i>
-
-                </div>
-
-            </div>
-            <div class="col-4">
-                <img src="~/images/demo/backgrounds/phuoc.jpg" />
-                <h4>Phuộc ohline</h4>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-0"></i>
-
-                </div>
-
-            </div>
-
-        </div>
+    @Html.PagedListPager(Model,Page => Url.Action("Trangchu",new {Page}))
+   
         <div class="wrapper row2">
             <section class="hoc container clear">
                 <!-- ################################################################################################ -->
