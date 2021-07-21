@@ -36,6 +36,7 @@ namespace DCXEMAY.Models
             }
           
         }
+
         public void updateQuantity(int id , int soluong)
         {
             var item = items.Find(s => s._shopping_sp.IDSanpham == id);
@@ -44,8 +45,10 @@ namespace DCXEMAY.Models
                 item._shopping_quantity = soluong;
             }    
         }
+
         public double tongtien()
         {
+
             var Total = items.Sum(s => s._shopping_sp.GiaSP * s._shopping_quantity);
             return (double)Total;
          }

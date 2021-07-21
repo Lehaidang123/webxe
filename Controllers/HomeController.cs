@@ -10,6 +10,7 @@ using PagedList.Mvc;
 
 
 using Microsoft.AspNet.Identity;
+using System.Configuration;
 
 namespace DCXEMAY.Controllers
 {
@@ -60,7 +61,15 @@ namespace DCXEMAY.Controllers
 
             //  ViewBag.IDDanhmuc = new SelectList(db.DanhMucs, "IDDanhmuc", "TenDanhmuc", sanPham.IDDanhmuc);
         }
+        public ActionResult test(FormCollection form)
+        {
+            var toEmail = ConfigurationManager.AppSettings["ToEmailAddress"].ToString();
+                          new HelpMail().SendMail(form["mail"], "hrrr", "");
+                          new HelpMail().SendMail(toEmail, "hrrr", "");
 
-     
+            return View();
+        }
+
+
     }
 }

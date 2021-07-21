@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.Entity;
 using System.IO;
@@ -76,8 +77,9 @@ namespace DCXEMAY.Controllers
 
 
                 }
-             
-               sanPham.DanhMucs = db.DanhMucs.ToList();
+
+                sanPham.DanhMucs = db.DanhMucs.ToList();
+               
                 db.SanPhams.Add(sanPham);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -148,6 +150,7 @@ namespace DCXEMAY.Controllers
             {
                 return HttpNotFound();
             }
+
             return View(sanPham);
         }
 
@@ -158,6 +161,7 @@ namespace DCXEMAY.Controllers
         {
             SanPham sanPham = db.SanPhams.Find(id);
             db.SanPhams.Remove(sanPham);
+          
             db.SaveChanges();
             return RedirectToAction("Index");
         }

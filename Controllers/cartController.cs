@@ -1,4 +1,6 @@
 ﻿using DCXEMAY.Models;
+
+using System.Data.Common;
 using Microsoft.AspNet.Identity;
 using System;
 using System.Data.Entity;
@@ -7,7 +9,9 @@ using System.Linq;
 using System.Web;
 using Microsoft.AspNet.Identity;
 using System.Web.Mvc;
-
+using System.Configuration;
+using System.Net.Mail;
+using System.Net;
 
 namespace DCXEMAY.Controllers
 {
@@ -105,9 +109,9 @@ namespace DCXEMAY.Controllers
                 oder.mail = form["mail"];
                 db.Oders.Add(oder);
 
+               
 
-
-              foreach (var item in cart.Items)
+                foreach (var item in cart.Items)
                 {
 
                     Oderdetail oderdetail = new Oderdetail();
@@ -118,13 +122,17 @@ namespace DCXEMAY.Controllers
                     oderdetail.soluong = item._shopping_quantity;
                 //   oderdetail.ID = int.Parse(User.Identity.GetUserId());
                     db.Oderdetails.Add(oderdetail);
-
+                 
                 }
-              
+
+                //var toEmail = ConfigurationManager.AppSettings["ToEmailAddress"].ToString();
+
+                //new HelpMail().SendMail(toEmail, "hrrr", "fdghjfds");
+
                 db.SaveChanges();
                 cart.ClearCart();
                 return RedirectToAction("Trangchu", "Home");
-
+              
             }
             catch
             {
@@ -137,7 +145,6 @@ namespace DCXEMAY.Controllers
         {
             return View();
         }
-        
 
         
     }
