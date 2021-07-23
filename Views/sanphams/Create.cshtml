@@ -5,17 +5,120 @@
     Layout = "~/Views/Shared/_LayoutPage1.cshtml";
 }
 
-<h2>Create</h2>
 
-@using (Html.BeginForm("Create", "Sanphams", FormMethod.Post, new { enctype = "multipart/form-data" })) 
+
+<div class="wrapper row0">
+    <header id="header" class="hoc clear">
+        <!-- ################################################################################################ -->
+        <div id="logo" class="one_quarter first">
+            <h1><a href="/wavefire/index.html"><span>Y</span>15<span>Z</span>R</a></h1>
+        </div>
+        <div class="three_quarter">
+            <ul class="nospace clear">
+                <li class="one_third first">
+                    <div class="block clear"><a href="#"><i class="fa fa-phone"></i></a> <span><strong>Alo Admin:</strong> 0389672882</span></div>
+                </li>
+                <li class="one_third">
+                    <div class="block clear"><a href="#"><i class="fa fa-envelope"></i></a> <span><strong>mail:</strong> lehaidangxh@gmail.com</span></div>
+                </li>
+                <li class="one_third">
+                    <div class="block clear"><a href="#"><i class="fa fa-clock"></i></a> <span><strong> Hoạt Động:</strong> 08.00am - 18.00pm</span></div>
+                </li>
+            </ul>
+        </div>
+        <!-- ################################################################################################ -->
+    </header>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row1">
+    <section class="hoc clear">
+        <!-- ################################################################################################ -->
+        <nav id="mainav">
+            <ul class="clear">
+                <li class="active"><a href="~/Home/Trangchu">Home</a></li>
+                <li>
+                    <a href="~/Danhmuc/Nhot">Nhớt</a>
+
+                </li>
+                </li>
+                <li>
+                    <a t href="~/Danhmuc/Phuocxe">Phuộc Xe</a>
+
+                </li>
+                <li><a href="~/Danhmuc/mamxe">Mâm Xe</a></li>
+                <li><a href="~/Danhmuc/octitan">Ốc Titan</a></li>
+                <li><a href="#">Đồ Chơi Xe</a></li>
+                <li><a href="~/Danhmuc/voxe">Vỏ Xe</a></li>
+            </ul>
+        </nav>
+        <!-- ################################################################################################ -->
+        <div id="searchform">
+            <div>
+                <form action="#" method="post">
+                    <fieldset>
+                        @using (Html.BeginForm())
+                        {
+                            <p>
+                                @Html.TextBox("SearchString") <input type="submit" value="Tìm kiếm" />
+                            </p>
+                        }
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+        <nav id="mainav">
+            <ul class="clear">
+
+
+                <li>
+                    <a href="~/cart/giohang">
+                        <i class="fas fa-shopping-cart"></i>
+
+                    </a>
+                </li>
+
+
+            </ul>
+        </nav>
+        <!-- ################################################################################################ -->
+    </section>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper bgded overlay" style="background-image:url('../images/demo/backgrounds/bb.jpg');">
+    <div id="breadcrumb" class="hoc clear">
+        <!-- ################################################################################################ -->
+        <article>
+            <p>Shop Đồ Chơi Xe Máy</p>
+            <h3 class="heading">Hải Đăng Y15ZR</h3>
+            <p>Chuyên Cung Cấp Đồ Chơi Xe Máy Chính Hãng</p>
+            <footer><a class="btn" href="#">Trãi Nghiệm Ngay <i class="fa fa-angle-right"></i></a></footer>
+        </article>
+        <!-- ################################################################################################ -->
+    </div>
+</div>
+<!-- ################################################################################################ -->
+<h2 class="title"> Các Sản Phẩm</h2>
+<div class="row">
+
+
+</div>
+
+
+
+@using (Html.BeginForm("Create", "Sanphams", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
+
         <h4>SanPham</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model=> model.IDSanpham)
+        @Html.HiddenFor(model => model.IDSanpham)
         <div class="form-group">
             @Html.LabelFor(model => model.TenSP, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -75,3 +178,91 @@
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
+
+
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row3">
+    <main class="hoc container clear">
+        <!-- main body -->
+        <!-- ################################################################################################ -->
+        <!-- ################################################################################################ -->
+        <!-- ################################################################################################ -->
+        <nav class="pagination">
+            <ul>
+                <li><a href="#">&laquo; Previous</a></li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><strong>&hellip;</strong></li>
+                <li><a href="#">6</a></li>
+                <li class="current"><strong>7</strong></li>
+                <li><a href="#">8</a></li>
+                <li><a href="#">9</a></li>
+                <li><strong>&hellip;</strong></li>
+                <li><a href="#">14</a></li>
+                <li><a href="#">15</a></li>
+                <li><a href="#">Next &raquo;</a></li>
+            </ul>
+        </nav>
+        <!-- ################################################################################################ -->
+</div>
+<!-- ################################################################################################ -->
+<!-- / main body -->
+<div class="clear"></div>
+  </main>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row4">
+    <footer id="footer" class="hoc clear">
+        <!-- ################################################################################################ -->
+        <div class="one_third first">
+            <h6 class="heading">Thông Tin Liên Hệ</h6>
+            <p>Số 5 cây cám khu phố 1 bình hưng hòa B  Bình Tân HCM.</p>
+            <p class="btmspace-30">KẾT NỐI VỚI CHÚNG TÔI<a href="#"><i class="fa fa-arrow-right"></i></a>]</p>
+            <ul class="faico clear">
+                <li><a class="faicon-dribble" href="#"><i class="fab fa-dribbble"></i></a></li>
+                <li><a class="faicon-facebook" href="#"><i class="fab fa-facebook"></i></a></li>
+                <li><a class="faicon-google-plus" href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                <li><a class="faicon-linkedin" href="#"><i class="fab fa-linkedin"></i></a></li>
+                <li><a class="faicon-twitter" href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a class="faicon-vk" href="#"><i class="fab fa-vk"></i></a></li>
+            </ul>
+        </div>
+
+
+
+        <div class="one_third">
+            <h6 class="heading">Map Chỉ Đường</h6>
+            <form method="post" action="#">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4057.5913281048647!2d106.59036318011049!3d10.782576251267674!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752d3a4004bf0d%3A0xb92afde684c0436f!2zNSDEkMaw4budbmcgQ8OieSBDw6FtLCBCw6xuaCBIxrBuZyBIb8OgIEIsIELDrG5oIFTDom4sIFRow6BuaCBwaOG7kSBI4buTIENow60gTWluaCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1626252341678!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </form>
+            </form>
+        </div>
+        <!-- ################################################################################################ -->
+    </footer>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row5">
+    <div id="copyright" class="hoc clear">
+        <!-- ################################################################################################ -->
+        <!-- ################################################################################################ -->
+    </div>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
+<!-- JAVASCRIPTS -->
+<script src="../layout/scripts/jquery.min.js"></script>
+<script src="../layout/scripts/jquery.backtotop.js"></script>
+<script src="../layout/scripts/jquery.mobilemenu.js"></script>
+</body>
+</html>
+
+
+
+

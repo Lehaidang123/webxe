@@ -147,13 +147,13 @@
             </div>
         </div>
 
-       
-            <!-- Product Pricing -->
-            <div class="product-price">
-                <span>@Html.DisplayFor(model => model.GiaSP)</span>
-                <a href="~/cart/AddtoCard/@Model.IDSanpham" class="cart-btn">Thêm giỏ hàng</a>
-            </div>
-        
+
+        <!-- Product Pricing -->
+        <div class="product-price">
+            <span>@Html.DisplayFor(model => model.GiaSP)</span>
+            <a href="~/cart/AddtoCard/@Model.IDSanpham" class="cart-btn">Thêm giỏ hàng</a>
+        </div>
+
 
     </div>
 </main>
@@ -171,25 +171,7 @@
     </form>
 </div>
 <hr />
-<!--code hiện thị bình luận-->
-
-
-
-
-
-<script type="text/javascript">
-    $(document).ready(function () {
-
-        $('.color-choose input').on('click', function () {
-            var headphonesColor = $(this).attr('data-image');
-
-            $('.active').removeClass('active');
-            $('.left-column img[data-image = ' + headphonesColor + ']').addClass('active');
-            $(this).addClass('active');
-        });
-
-    });
-</script>
+<!--code
 
 
 

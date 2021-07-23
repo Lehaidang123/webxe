@@ -26,20 +26,21 @@
         }
         [Key]
         public int IDSanpham { get; set; }
-
+        [Required]
         public string TenSP { get; set; }
-
+        [Required]
         public int? SoLuong { get; set; }
+        [Required]
         [DisplayFormat(DataFormatString ="{0:0,0 vnđ}")]
         public int? GiaSP { get; set; }
-
+        [Required]
         public string MoTa { get; set; }
-
+        [Required]
         public string URLImage { get; set; }
-
+        
         [StringLength(255)]
         public string IDDanhmuc { get; set; }
-
+        [Required]
         public virtual DanhMuc DanhMuc { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -157,7 +157,7 @@ namespace DCXEMAY.Controllers
         // POST: SanPhams/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(string id)
+        public ActionResult DeleteConfirmed(int id)
         {
             SanPham sanPham = db.SanPhams.Find(id);
             db.SanPhams.Remove(sanPham);

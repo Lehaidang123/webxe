@@ -47,33 +47,116 @@
     @RenderSection("scripts", required: false)
     @RenderSection("upload", required: false)
 
-    <!-- Messenger Plugin chat Code -->
-    <!--<div id="fb-root"></div>-->
-
-    <!-- Your Plugin chat code -->
-    <!--<div id="fb-customer-chat" class="fb-customerchat">
+    Messenger Plugin chat Code
+    <div id="fb-root"></div>
+    Your Plugin chat code
+    <div id="fb-customer-chat" class="fb-customerchat">
     </div>
 
-    <script>
-        var chatbox = document.getElementById('fb-customer-chat');
-        chatbox.setAttribute("page_id", "106377424321048");
-        chatbox.setAttribute("attribution", "biz_inbox");
 
-        window.fbAsyncInit = function () {
-            FB.init({
-                xfbml: true,
-                version: 'v11.0'
-            });
-        };
+    <div class="call-mobile2">
+        <a data-animate="fadeInDown" href="https://zalo.me/0389672882" target="_blank" class="button success1" style="border-radius:99px;" data-animated="true">
+            <span>Chat Zalo </span>
+        </a>
+    </div>
 
-        (function (d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s); js.id = id;
-            js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-    </script>-->
+    <div class="call-mobile1">
+        <a data-animate="fadeInDown" href="https://business.facebook.com/latest/inbox/messenger" target="_blank" class="button success2" style="border-radius:99px;" data-animated="true">
+            <span>Chat Facebook</span>
+        </a>
+    </div>
+
+    <div class="call-mobile">
+        <a id="callnowbutton" href="tel:0389672882">Gọi 0389672882</a>
+    </div>
+
+    <style>
+        .success1.is-underline:hover, .success1.is-outline:hover, .success1 {
+            background-color: #1E73BE;
+            padding: 0 5px;
+            color: white !important;
+        }
+
+        .success2.is-underline:hover, .success2.is-outline:hover, .success2 {
+            background-color: #ff4800;
+            padding: 0 5px;
+            color: white !important;
+        }
+
+        .call-mobile {
+            background: #00a63f;
+            position: fixed;
+            bottom: 10px;
+            height: 40px;
+            line-height 40px;
+            padding: 7px 0px 0 0px;
+            border-radius: 40px;
+            color: #fff;
+            left: 20px;
+            z-index: 99999;
+        }
+
+        .call-mobile1 {
+            position: fixed;
+            bottom: 55px;
+            height: 40px;
+            line-height: 40px;
+            padding: 0 0px 0 0px;
+            border-radius: 40px;
+            color: #fff;
+            left: 20px;
+            z-index: 99999;
+        }
+
+        .call-mobile2 {
+            position: fixed;
+            bottom: 100px;
+            height: 40px;
+            line-height: 40px;
+            padding: 0 0px 0 0px;
+            border-radius: 40px;
+            color: #fff;
+            left: 20px;
+            z-index: 99999;
+        }
+
+        .call-mobile i {
+            font-size: 20px;
+            line-height: 40px;
+            background: #B52026;
+            border-radius: 100%;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            float: right;
+        }
+
+        .call-mobile a {
+            color: #fff;
+            font-size: 15px;
+            font-weight: bold;
+            text-decoration: none;
+            margin-right: 10px;
+            padding-left: 10px;
+        }
+
+        .button span {
+            text-transform: initial;
+            font-weight: 400;
+            font-family: poppins;
+        }
+
+        a#callnowbutton {
+            font-family: poppins;
+            font-weight: 400;
+        }
+    </style>
+
+
+
+    <div class="zalo-chat-widget" data-oaid="62359427589640016" data-welcome-message="Rất vui khi được hỗ trợ bạn!" data-autopopup="0" data-width="350" data-height="420"></div>
+
+    <script src="https://sp.zalo.me/plugins/sdk.js"></script>
 
 
 </body>
