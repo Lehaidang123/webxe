@@ -174,5 +174,19 @@ namespace DCXEMAY.Controllers
             }
             base.Dispose(disposing);
         }
+        [ChildActionOnly]
+        public ActionResult CreateCMT()
+        {
+            return View("CreateCMT");
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateCMT(Binhluan strCMT, string Id_sanpham)
+        {
+            query qr = new query();
+            qr.Createcmt(strCMT, Id_sanpham);
+            return View("CreateCMT");
+        }
     }
 }

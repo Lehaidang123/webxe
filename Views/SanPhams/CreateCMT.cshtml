@@ -1,0 +1,29 @@
+﻿@model DCXEMAY.Models.Binhluan
+@using Microsoft.AspNet.Identity
+@using (Html.BeginForm())
+{
+@Html.AntiForgeryToken()
+                <div class="form-horizontal">
+                    <hr />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @{ if (@User.Identity.GetUserName() == "")
+                                            {
+                            <h2>Hãy đăng nhập để viết bình luận</h2> }
+                                            else
+                                            {
+                            <h3>Viết bình luận đánh giá sản phẩm</h3>
+                                                <div class="binhl" style="float:left;">
+                                                    <input type="text" class="form-control" name="noidung" placeholder="Nhập bình luận của bạn" required>
+                                                    @*<input type="hidden" class="form-control" name="ngaydanhgia" value="@DateTime.Now.Date" required>*@
+                                                    <input type="hidden" name="username" value=" @User.Identity.GetUserName()" required>
+                                                </div>
+                                                                    <div class="binhl">
+                                                                        <input type="submit" name="themcmt" value="Đăng bình luận" class="btn btn-default" />
+                                                                    </div> } }
+
+                    </div>
+                </div>}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

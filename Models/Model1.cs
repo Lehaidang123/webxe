@@ -1,6 +1,7 @@
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
+using System.Data.SqlClient;
 using System.Linq;
 
 namespace DCXEMAY.Models
@@ -16,6 +17,8 @@ namespace DCXEMAY.Models
         public virtual DbSet<Oder> Oders { get; set; }
         public virtual DbSet<Oderdetail> Oderdetails { get; set; }
         public virtual DbSet<SanPham> SanPhams { get; set; }
+
+     
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
