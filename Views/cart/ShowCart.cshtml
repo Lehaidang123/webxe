@@ -55,7 +55,7 @@
     </nav>
     <section class="jumbotron text-center">
         <div class="container">
-            <h1 class="jumbotron-heading">E-COMMERCE CART</h1>
+            <h1 class="jumbotron-heading">Giỏ hàng Y15ZR </h1>
         </div>
     </section>
 
@@ -101,7 +101,7 @@
                                     <td></td>
                                     <td></td>
                                     <td></td>
-                                    <td>Sub-Total</td>
+                                    <td>Tổng tiền</td>
                                     <td class="text-right">@String.Format("{0:0,0 vnđ}", @total)</td>
                                 </tr>
 
@@ -111,20 +111,20 @@
 
                         }
                         <tfoot>
-                            <tr>
+                            @*<tr>
                                 <td></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
                                 <td>Shipping</td>
                                 <td class="text-right">6,90 €</td>
-                            </tr>
+                            </tr>*@
                             <tr>
                                 <td></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <td><strong>Total</strong></td>
+                                <td><strong>Tiền phải thanh toán </strong></td>
                                 <td class="text-right"><strong>@String.Format("{0:0,0 vnđ}", @Model.tongtien())</strong></td>
                             </tr>
                         </tfoot>
@@ -138,92 +138,132 @@
                 <div class="row">
                     <div class="col-sm-12  col-md-6">
 
-                        <a href="~/Home/Trangchu"> <button class="btn btn-block btn-light">Continue Shopping</button></a>
+                        <a href="~/Home/Trangchu"> <button class="btn btn-block btn-light">Tiếp tục mua sắm</button></a>
 
                     </div>
                     <div class="col-sm-12 col-md-6 text-right">
+                        <a href="#myModal" class="trigger-btn" data-toggle="modal"> <button class="btn btn-lg btn-block btn-success text-uppercase">Thanh Toán</button></a>
 
-                        <button class="btn btn-lg btn-block btn-success text-uppercase">Checkout</button>
+                      
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    @*@using (Html.BeginForm("Checkout", "cart"))
-    {
-        <tfoot>
-
-            <tr>
-                <td>
-                    <input type="text" name="diachi" />
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <input type="text" name="hoten" />
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <input type="number" name="sdt" />
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <input type="text" name="mail" />
-                </td>
-                <td>
-                    <input type="submit" class="btn-btn-s" />
-                </td>
-            </tr>
-
-        </tfoot>
-    }*@
-    <!-- Footer -->
     @using (Html.BeginForm("Checkout", "cart"))
     {
-        <footer class="text-light">
-           
-            <table class="table">
-                <tr>
-                    <th>
-                       Địa Chỉ 
-                    </th>
-                    <th>
-                       Họ Và Tên
-                    </th>
-                    <th>
-                       Số Điện Thoại
-                    </th>
-                    <th>
-                       Email
-                    </th>
-
-                    <th></th>
-                </tr>
+        <!-- Modal HTML -->
+        <div id="myModal" class="modal fade">
+            <div class="modal-dialog modal-login">
+                <div class="modal-content">
+                    <form action="/examples/actions/confirmation.php" method="post">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Thanh toán</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label>Địa chỉ</label>
+                                <input name="diachi" type="text" class="form-control" required="required">
+                            </div>
+                            <div class="form-group">
+                                <label>Họ Tên</label>
+                                <input name="hoten" type="text" class="form-control" required="required">
+                            </div>
+                            <div class="form-group">
+                                <label>SĐT</label>
+                                <input name="sdt" type="text" class="form-control" required="required">
+                            </div>
+                            <div class="form-group">
+                                <label>Mail</label>
+                                <input name="mail" type="text" class="form-control" required="required">
+                            </div>
+                        </div>
+                        <div class="modal-footer justify-content-between">
+                            <label class="form-check-label"><input type="checkbox"> Remember me</label>
+                            <input type="submit" class="btn btn-primary" value="Thanh Toán">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    }
+    @*@using (Html.BeginForm("Checkout", "cart"))
+        {
+            <tfoot>
 
                 <tr>
                     <td>
                         <input type="text" name="diachi" />
                     </td>
+                </tr>
+                <tr>
                     <td>
                         <input type="text" name="hoten" />
                     </td>
+                </tr>
+                <tr>
                     <td>
-                        <input type="text" name="sdt" />
+                        <input type="number" name="sdt" />
                     </td>
+                </tr>
+                <tr>
                     <td>
                         <input type="text" name="mail" />
                     </td>
-                   
                     <td>
                         <input type="submit" class="btn-btn-s" />
                     </td>
+                </tr>
 
-                    
-        </footer>
-    }
-    </table>
+            </tfoot>
+        }*@
+    <!-- Footer -->
+    @*@using (Html.BeginForm("Checkout", "cart"))
+        {
+            <footer class="text-light">
+
+                <table class="table">
+                    <tr>
+                        <th>
+                           Địa Chỉ
+                        </th>
+                        <th>
+                           Họ Và Tên
+                        </th>
+                        <th>
+                           Số Điện Thoại
+                        </th>
+                        <th>
+                           Email
+                        </th>
+
+                        <th></th>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <input type="text" name="diachi" />
+                        </td>
+                        <td>
+                            <input type="text" name="hoten" />
+                        </td>
+                        <td>
+                            <input type="text" name="sdt" />
+                        </td>
+                        <td>
+                            <input type="text" name="mail" />
+                        </td>
+
+                        <td>
+                            <input type="submit" class="btn-btn-s" />
+                        </td>
+
+
+            </footer>
+        }*@
+</table>
        }
 
 
