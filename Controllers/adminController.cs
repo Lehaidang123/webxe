@@ -21,19 +21,22 @@ namespace DCXEMAY.Controllers
         {
             return View();
         }
-      
+
 
         // GET: SanPhams
+        [Authorize(Users = "lehaidangxh@gmail.com")]
         public ActionResult Sanpham()
         {
             SanPham sanPham = new SanPham();
             return View(db.SanPhams.ToList());
         }
+        [Authorize(Users = "lehaidangxh@gmail.com")]
         public ActionResult oderdetail()
         {
           
             return View(db.Oderdetails.ToList());
         }
+
         public ActionResult ExportToExcel()
         {
             var gv = new GridView();

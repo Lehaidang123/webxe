@@ -7,11 +7,12 @@ using System.Data.Entity;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Microsoft.AspNet.Identity;
+
 using System.Web.Mvc;
 using System.Configuration;
 using System.Net.Mail;
 using System.Net;
+using BotDetect.Web.Mvc;
 
 namespace DCXEMAY.Controllers
 {
@@ -33,7 +34,10 @@ namespace DCXEMAY.Controllers
         }
 
 
-
+        public ActionResult Camon()
+        {
+            return View();
+        }
 
         public ActionResult AddtoCard(int id)
         {
@@ -91,6 +95,8 @@ namespace DCXEMAY.Controllers
                 return PartialView("BagCart");
                
         }
+       
+        [CaptchaValidation("CaptchaCode","ContactCaptcha","Mã Xác nhận không đúng")]
         public ActionResult Checkout(FormCollection form)
         {
             try
@@ -109,7 +115,7 @@ namespace DCXEMAY.Controllers
                 oder.mail = form["mail"];
                 db.Oders.Add(oder);
 
-               
+              
 
                 foreach (var item in cart.Items)
                 {
@@ -120,7 +126,7 @@ namespace DCXEMAY.Controllers
                     oderdetail.IDSanpham = item._shopping_sp.IDSanpham;
                     oderdetail.gia = Convert.ToString(item._shopping_sp.GiaSP);
                     oderdetail.soluong = item._shopping_quantity;
-                //   oderdetail.ID = int.Parse(User.Identity.GetUserId());
+             
                     db.Oderdetails.Add(oderdetail);
                  
                 }
@@ -131,7 +137,7 @@ namespace DCXEMAY.Controllers
 
                 db.SaveChanges();
                 cart.ClearCart();
-                return RedirectToAction("Trangchu", "Home");
+                return RedirectToAction("Camon", "cart");
               
             }
             catch

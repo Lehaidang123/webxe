@@ -59,13 +59,13 @@ namespace DCXEMAY.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-
+        
         public ActionResult Create([Bind(Include = "IDSanpham,TenSP,SoLuong,GiaSP,MoTa,URLImage,IDDanhmuc")] SanPham sanPham, HttpPostedFileBase file)
         {
             try
             {
 
-
+                
 
                 if (file != null)
                 {
@@ -117,11 +117,16 @@ namespace DCXEMAY.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+       
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "IDSanpham,TenSP,SoLuong,GiaSP,MoTa,URLImage,IDDanhmuc")] SanPham sanPham, HttpPostedFileBase file)
         {
-            if (ModelState.IsValid)
+            try
             {
+                if (ModelState.IsValid)
+                {
+
+                
                 if (file != null)
                 {
                     string filename = Path.GetFileName(file.FileName);
@@ -130,12 +135,19 @@ namespace DCXEMAY.Controllers
                     sanPham.URLImage = "~/Content/Images/" + filename;
                     file.SaveAs(Path.Combine(HttpContext.Server.MapPath("~/Content/Images/"), filename));
                 }
-                db.Entry(sanPham).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
             }
-            ViewBag.IDDanhmuc = new SelectList(db.DanhMucs, "IDDanhmuc", "TenDanhmuc", sanPham.IDDanhmuc);
-            return View(sanPham);
+                //db.Entry(sanPham).State = EntityState.Modified;
+                db.SaveChanges();
+                 return RedirectToAction("Index");
+                
+            }
+            catch
+            {
+                ViewBag.IDDanhmuc = new SelectList(db.DanhMucs, "IDDanhmuc", "TenDanhmuc", sanPham.IDDanhmuc);
+                return View(sanPham);
+            }
+           
+           
         }
 
         // GET: SanPhams/Delete/5
@@ -174,19 +186,6 @@ namespace DCXEMAY.Controllers
             }
             base.Dispose(disposing);
         }
-        [ChildActionOnly]
-        public ActionResult CreateCMT()
-        {
-            return View("CreateCMT");
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult CreateCMT(Binhluan strCMT, string Id_sanpham)
-        {
-            query qr = new query();
-            qr.Createcmt(strCMT, Id_sanpham);
-            return View("CreateCMT");
-        }
+        
     }
 }

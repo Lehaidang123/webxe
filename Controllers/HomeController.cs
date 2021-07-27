@@ -37,7 +37,7 @@ namespace DCXEMAY.Controllers
         }
 
        
-        public ActionResult Trangchu(string searchString,int page=1,int size=8)
+        public ActionResult Trangchu(string searchString,int page=1,int size=10)
         {
             SanPham e = new SanPham();
             var sp = from l in db.SanPhams // lấy toàn bộ liên kết

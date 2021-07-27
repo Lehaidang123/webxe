@@ -10,22 +10,22 @@ namespace DCXEMAY.Models
     {
         SqlDataAdapter db = new SqlDataAdapter();
 
-        public bool Createcmt(Binhluan model, string Id_sanpham)
-        {
+        //public bool Createcmt(Binhluan model, string Id_sanpham)
+        //{
 
-            //string sql1 = " insert into BinhLuan(NoiDung,IDSanpham,ID) values(N'" + model.noidung + "','" + Id_sanpham + "','" + model.Id_user + "')";
-            //SqlConnection con = db.GetConnection();
+        //    //string sql1 = " insert into BinhLuan(NoiDung,IDSanpham,ID) values(N'" + model.noidung + "','" + Id_sanpham + "','" + model.Id_user + "')";
+        //    //SqlConnection con = db.GetConnection();
 
-            //SqlCommand cmd1 = new SqlCommand(sql1, con);
+        //    //SqlCommand cmd1 = new SqlCommand(sql1, con);
 
-            //con.Open();
+        //    //con.Open();
 
-            //var kq1 = cmd1.ExecuteNonQuery();
+        //    //var kq1 = cmd1.ExecuteNonQuery();
 
-            //con.Close();
+        //    //con.Close();
 
-            //return kq1 > 0;
+        //    //return kq1 > 0;
 
-        }
+        //}
     }
 }

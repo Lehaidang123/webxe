@@ -95,6 +95,19 @@ namespace DCXEMAY.Controllers
 
             return View(sp);
         }
+        public ActionResult dochoi(string searchString)
+        {
+            var sp = from l in db.SanPhams // lấy toàn bộ liên kết
+                     select l;
+
+            if (!String.IsNullOrEmpty(searchString)) // kiểm tra chuỗi tìm kiếm có rỗng/null hay không
+            {
+                //  sp = SanPham.Where(s => s.Contains(searchString)); //lọc theo chuỗi tìm
+                sp = db.SanPhams.Where(s => s.TenSP.Contains(searchString));
+            }
+
+            return View(sp);
+        }
 
     }
 }
